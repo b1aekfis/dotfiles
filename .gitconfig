@@ -1,0 +1,11 @@
+[user]
+	name = b1aekfis
+	mail = b1aekfis@gmail.com
+	email = 148613625+b1aekfis@users.noreply.github.com
+[alias]
+	status = !gst
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -1,0 +1,226 @@
+{
+    "[markdown]": {
+        "editor.fontFamily": "Consolas, 'Courier New', monospace"
+    },
+    "[plaintext]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false
+    },
+    "background.useFront": false,
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.icons": false,
+    "chronicler.ffmpeg-binary": "c:\\Users\\QUI\\ffmpeg-7.0.1-essentials_build\\ffmpeg-7.0.1-essentials_build\\bin\\ffmpeg.exe",
+    "chronicler.recording-defaults": {
+        "animatedGif": true,
+        "countdown": 5,
+        "flags": null,
+        "fps": 12
+    },
+    "diffEditor.renderSideBySide": false,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "editor.folding": false,
+    "editor.fontFamily": "Hack, monospace",
+    "editor.fontLigatures": false,
+    "editor.fontSize": 14.7,
+    "editor.guides.bracketPairsHorizontal": false,
+    "editor.guides.highlightActiveBracketPair": false,
+    "editor.guides.indentation": false,
+    "editor.minimap.enabled": false,
+    "editor.overviewRulerBorder": false,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.wordWrap": "on",
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
+    "launch": {
+        "configurations": [
+            {
+                "args": [],
+                "cwd": "${fileDirname}",
+                "environment": [],
+                "externalConsole": false,
+                "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+                "MIMode": "gdb",
+                "name": "C/C++: g++.exe build and debug active file",
+                "preLaunchTask": "C/C++: g++.exe build active file",
+                "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "request": "launch",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "ignoreFailures": true,
+                        "text": "-enable-pretty-printing"
+                    },
+                    {
+                        "description": "Set Disassembly Flavor to Intel",
+                        "ignoreFailures": true,
+                        "text": "-gdb-set disassembly-flavor intel"
+                    }
+                ],
+                "stopAtEntry": false,
+                "type": "cppdbg"
+            }
+        ],
+        "version": "2.0.0"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "markdown-preview-enhanced.alwaysShowBacklinksInPreview": false,
+    "markdown-preview-enhanced.codeBlockTheme": "github-dark.css",
+    "markdown-preview-enhanced.enablePreviewZenMode": true,
+    "markdown-preview-enhanced.previewTheme": "newsprint.css",
+    "markdown-preview-enhanced.revealjsTheme": "none.css",
+    "material-icon-theme.files.color": "#90a4ae",
+    "material-icon-theme.folders.color": "#0e7490",
+    "material-icon-theme.hidesExplorerArrows": true,
+    "material-icon-theme.opacity": 1,
+    "material-icon-theme.saturation": 1,
+    "screencastMode.fontSize": 20,
+    "screencastMode.mouseIndicatorColor": "#ad5267",
+    "svg.preview.mode": "svg",
+    "task.problemMatchers.neverPrompt": false,
+    "terminal.integrated.automationProfile.windows": null,
+    "terminal.integrated.defaultProfile.linux": "PowerShell",
+    "terminal.integrated.defaultProfile.osx": "PowerShell",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontFamily": "'MesloLGM Nerd Font'",
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.gpuAcceleration": "off",
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "args": [],
+            "icon": "terminal-cmd",
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ]
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "PowerShell": {
+            "icon": "terminal-powershell",
+            "source": "PowerShell"
+        }
+    },
+    "terminal.integrated.shellArgs.windows": "-nologo",
+    /* todo-tree */
+    "todo-tree.general.tagGroups": {
+        "FIXME": [
+            "--FIXME--",
+            "FIXME:",
+            "FIX:"
+        ],
+        "STRESS": [
+            "--STRESS--",
+            "STRESS:"
+        ],
+        "TODO": [
+            "--TODO--",
+            "TODO:"
+        ]
+    },
+    "todo-tree.general.tags": [
+        // fixme group (tag)
+        "FIXME",
+        "--FIXME--",
+        "FIXME:",
+        "FIX:",
+        // todo group (tag)
+        "TODO",
+        "--TODO--",
+        "TODO:",
+        // stress group (tag)
+        "STRESS",
+        "--STRESS--",
+        "STRESS:",
+        // issues group (text)
+        "--issues--"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "--issues--": {
+            "background": "#85e7e8",
+            "foreground": "#17202a",
+            "gutterIcon": "true",
+            "icon": "issue-opened",
+            "iconColour": "#85e7e8",
+            "type": "text"
+        },
+        "FIXME": {
+            "background": "#ff8a58",
+            "foreground": "#000000",
+            "gutterIcon": true,
+            "icon": "bug",
+            "iconColour": "#ff8a58"
+        },
+        "STRESS": {
+            "background": "#ffa5d8",
+            "foreground": "#17202a",
+            "gutterIcon": true,
+            "icon": "pin",
+            "iconColour": "#ffa5d8"
+        },
+        "TODO": {
+            "background": "#85e7e8",
+            "foreground": "#17202a",
+            "gutterIcon": "true",
+            "icon": "flame",
+            "iconColour": "#85e7e8"
+        }
+    },
+    "vscode_custom_css.imports": [
+        "file:///C:/Users/QUI/.dotfiles/vscode/ext/cuscssjs/statusbar.css"
+    ],
+    "vscode_custom_css.statusbar": false,
+    "vscode_vibrancy.opacity": 0,
+    "vscode_vibrancy.refreshInterval": 10,
+    "window.commandCenter": false,
+    "window.customTitleBarVisibility": "never",
+    "window.menuBarVisibility": "toggle",
+    "window.newWindowDimensions": "inherit",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}",
+    "window.titleBarStyle": "native",
+    "workbench.activityBar.location": "hidden",
+    "workbench.colorCustomizations": {
+        "activityBarTop.activeBorder": "#00000000",
+        "breadcrumb.background": "#00000000",
+        "breadcrumb.foreground": "#0e7490",
+        "button.background": "#0e7490",
+        "editor.background": "#00000000",
+        "editor.lineHighlightBackground": "#1f2937",
+        "editorLineNumber.activeForeground": "#0e7490",
+        "editorLineNumber.foreground": "#404040",
+        "editorStickyScroll.background": "#1a1a1a",
+        "editorSuggestWidget.background": "#081d20",
+        "focusBorder": "#00000000",
+        "list.focusForeground": "#0e7490",
+        "panel.border": "#00000000",
+        "quickInput.background": "#081d20",
+        "sideBar.background": "#00000000",
+        "sideBar.border": "#00000000",
+        "sideBarSectionHeader.border": "#00000000",
+        "sideBarStickyScroll.background": "#1a1a1a",
+        "statusBar.background": "#00000000",
+        "statusBar.border": "#00000000",
+        "statusBar.debuggingBackground": "#00000000",
+        "statusBar.focusBorder": "#00000000",
+        "statusBar.foreground": "#878181",
+        "statusBar.noFolderBackground": "#00000000",
+        "statusBarItem.errorBackground": "#ffffff",
+        "statusBarItem.errorForeground": "#ad5267",
+        "statusBarItem.remoteBackground": "#00000000",
+        "statusBarItem.remoteForeground": "#878181",
+        "terminal.background": "#00000000"
+    },
+    "workbench.editor.showTabs": "none",
+    "workbench.editor.tabSizing": "fixed",
+    "workbench.editorAssociations": {
+        "*.pdf": "pdf.preview",
+        "*.txt": "default"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.preferredDarkColorTheme": "Default Dark+",
+    "workbench.settings.applyToAllProfiles": [
+        "workbench.colorCustomizations"
+    ]
+}
