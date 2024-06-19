@@ -1,0 +1,44 @@
+/* color modes in Vim */
+
+#vscodevim\.vim\.primary{
+  font-family: Hack, monospace;
+}
+
+#vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- INSERT --"]{
+  background-color: #ad5267;
+  color: whitesmoke
+}
+
+#vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- NORMAL --"]{
+  background-color: #4bae7c; /* or #52ad98 */
+  color: black;
+}
+
+#vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- VISUAL --"], #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- VISUAL LINE --"]{
+  background-color: #c0b708;
+  color: black;
+}
+
+#vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- REPLACE --"]{
+  background-color: #9f62a7;
+  color: whitesmoke
+}
+
+#vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label^="/"], #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label^=":"]{
+  background-color: whitesmoke;
+  color: black;
+}
+
+#vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label$="written"]{
+  color: #95ffa4;
+}
+
+#vscodevim\.vim\.showcmd {
+  color: whitesmoke;
+}
+
+/* clock */
+
+#Compulim\.vscode-clock.statusbar-item.right{
+  color: aquamarine;
+}
