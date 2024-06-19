@@ -106,7 +106,7 @@
     },
     "terminal.integrated.shellArgs.windows": "-nologo",
     "vscode_custom_css.imports": [
-        "file:///C:/Users/QUI/Desktop/katspace/assets/vscode_custom/statusbar.css"
+        "file:///C:/Users/QUI/.dotfiles/vscode/ext/cuscssjs/statusbar.css"
     ],
     "vscode_custom_css.statusbar": false,
     "vscode_vibrancy.opacity": 0,
