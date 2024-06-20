@@ -105,6 +105,107 @@
         }
     },
     "terminal.integrated.shellArgs.windows": "-nologo",
+    /* todo-tree */
+    "todo-tree.general.tagGroups": {
+        "FIXME": [
+            "--FIXME--",
+            "FIXME:"
+        ],
+        "STRESS": [
+            "--STRESS--",
+            "STRESS:"
+        ],
+        "TODO": [
+            "--TODO--",
+            "TODO:",
+            "--TODOS--",
+            "TODOS",
+            "TODOS:"
+        ]
+    },
+    "todo-tree.general.tags": [
+        // fixme group (tag)
+        "FIXME",
+        "--FIXME--",
+        "FIXME:",
+        // todo group (tag)
+        "TODO",
+        "--TODO--",
+        "TODO:",
+        "TODOS",
+        "TODOS:",
+        "--TODOS--",
+        // stress group (tag)
+        "STRESS",
+        "--STRESS--",
+        "STRESS:",
+        // issues group (text)
+        "--issues--",
+        // bljtz group (text)
+        "bljtz@",
+        "bljtz#",
+        "stress_bljtz@",
+        "stress_bljtz#"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "bljtz#": {
+            "background": "#00000000",
+            "foreground": "#58c7ff",
+            "hideFromTree": true,
+            "type": "text"
+        },
+        "bljtz@": {
+            "background": "#58c7ff",
+            "foreground": "#000000",
+            "hideFromTree": true,
+            "type": "text"
+        },
+        "FIXME": {
+            "background": "#ff8a58",
+            "foreground": "#000000",
+            "gutterIcon": true,
+            "icon": "bug",
+            "iconColour": "#ff8a58"
+        },
+        "STRESS": {
+            "background": "#ffa5d8",
+            "foreground": "#17202a",
+            "gutterIcon": true,
+            "icon": "pin",
+            "iconColour": "#ffa5d8"
+        },
+        "stress_bljtz#": {
+            "background": "#00000000",
+            "foreground": "#58c7ff",
+            "gutterIcon": "true",
+            "icon": "pin",
+            "iconColour": "#58c7ff",
+            "type": "text"
+        },
+        "stress_bljtz@": {
+            "background": "#58c7ff",
+            "foreground": "#17202a",
+            "gutterIcon": true,
+            "icon": "pin",
+            "iconColour": "#58c7ff",
+            "type": "text"
+        },
+        "TODO": {
+            "background": "#85e7e8",
+            "foreground": "#17202a",
+            "gutterIcon": "true",
+            "icon": "flame",
+            "iconColour": "#85e7e8"
+        },
+        "--issues--": {
+            "background": "#85e7e8",
+            "foreground": "#17202a",
+            "gutterIcon": "true",
+            "icon": "issue-opened",
+            "iconColour": "#85e7e8",
+            "type": "text"
+        }
+    },
     "vscode_custom_css.imports": [
         "file:///C:/Users/QUI/.dotfiles/vscode/ext/cuscssjs/statusbar.css"
     ],
