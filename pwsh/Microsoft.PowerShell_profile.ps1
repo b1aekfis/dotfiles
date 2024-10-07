@@ -1,6 +1,11 @@
 # Theme
 Invoke-Expression (&starship init powershell)
 
+# _vdff (_vdiff) m1, m2, ...
+function Get-Vdff([string]$m) {
+  wt -w 0 -p pwsh -d . pwsh -c git difftool $m
+}
+
 # cd with fzf
 function Get-FFCDir {
   $dir = fd --type d --hidden --follow | fzf --height 40%
@@ -35,6 +40,12 @@ function Set-SymlinkForce([string]$loc,[string]$targetLoc) {
 # Aliases
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name ffim -Value Get-FFVim
+
+New-Alias -Name _vdff -Value Get-Vdff
+New-Alias -Name _vdiff -Value Get-Vdff
+function Get-GitDiffTool{& git difftool $args}
+New-Alias -Name vdff -Value Get-GitDiffTool
+New-Alias -Name vdiff -Value Get-GitDiffTool
 
 New-Alias -Name ffcd -Value Get-FFCDir
 
@@ -82,4 +93,3 @@ Set-PSReadLineOption @PSReadLineOptions
 
 # PSStyle
 $PSStyle.FileInfo.Directory = $PSStyle.Foreground.FromRgb(0x3a94c4)
-$PSStyle.Formatting.TableHeader = "$($PSStyle.Formatting.TableHeader)$($PSStyle.BoldOff)$($PSStyle.Italic)"
