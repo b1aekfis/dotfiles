@@ -1,0 +1,10 @@
+require("config.options")
+require("config.keymaps")
+require("config.autocmds")
+require("config.lazy")
+
+vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi EndOfBuffer guibg=NONE ctermbg=NONE]])
+vim.cmd([[hi CursorLine guibg=#3c4841 ctermbg=NONE]])
+vim.cmd([[hi CursorLineNr guibg=NONE guifg=#a7c080]])
+vim.cmd([[hi normalNC guibg=NONE ctermbg=NONE]])
