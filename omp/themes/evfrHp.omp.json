@@ -1,0 +1,86 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "auto_upgrade": true,
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#dbbc7f",
+          "style": "plain",
+          "template": "\uf0e7",
+          "type": "root"
+        },
+        {
+          "foreground": "#e67e80",
+          "style": "plain",
+          "template": " \ue20f ",
+          "type": "status"
+        },
+        {
+          "foreground": "#dbbc7f",
+          "style": "plain",
+          "template": " \uf120 {{ .Name }} ",
+          "type": "shell"
+        },
+        {
+          "foreground": "#e67e80",
+          "properties": {
+            "style": "agnoster_short"
+          },
+          "style": "plain",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#a7c080",
+          "properties": {
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }} ",
+          "type": "git"
+        },
+        {
+          "foreground": "#d699b6",
+          "style": "plain",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "type": "python"
+        },
+        {
+          "foreground": "#dbbc7f",
+          "style": "plain",
+          "template": " {{ if .Root }}<#dbbc7f>R</>{{else}}\udb83\udc01{{end}} ",
+          "type": "text"
+        },
+        {
+          "foreground": "#e69875",
+          "style": "plain",
+          "template": " {{ if not .Root }}\udb82\udef6{{end}} ",
+          "type": "text"
+        },
+        {
+          "foreground": "#7fbbb3",
+          "style": "plain",
+          "template": " {{ if not .Root }}\udb82\udffe{{end}} ",
+          "type": "text"
+        },
+        {
+          "foreground": "#7fbbb3",
+          "style": "plain",
+          "template": " {{ if not .Root }}\udb82\udffe{{end}} ",
+          "type": "text"
+        },
+        {
+          "foreground": "#a7c080",
+          "style": "plain",
+          "template": " {{ if not .Root }}\udb82\udf00{{end}} ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
