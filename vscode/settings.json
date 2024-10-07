@@ -32,6 +32,7 @@
     "editor.wordWrap": "on",
     "explorer.confirmDragAndDrop": false,
     "extensions.ignoreRecommendations": true,
+    "git.openRepositoryInParentFolders": "always",
     "launch": {
         "configurations": [
             {
@@ -68,6 +69,7 @@
     "markdown-preview-enhanced.alwaysShowBacklinksInPreview": false,
     "markdown-preview-enhanced.codeBlockTheme": "github-dark.css",
     "markdown-preview-enhanced.enablePreviewZenMode": true,
+    "markdown-preview-enhanced.liveUpdate": false,
     "markdown-preview-enhanced.previewTheme": "newsprint.css",
     "markdown-preview-enhanced.revealjsTheme": "none.css",
     "material-icon-theme.files.color": "#90a4ae",
@@ -168,6 +170,40 @@
             "iconColour": "#85e7e8"
         }
     },
+    "vscode-neovim.ctrlKeysForNormalMode": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "o",
+        "r",
+        "t",
+        "u",
+        "v",
+        "x",
+        "y",
+        "z",
+        "/",
+        "]",
+        "right",
+        "left",
+        "up",
+        "down",
+        "backspace",
+        "delete",
+        "w"
+    ],
+    "vscode-neovim.neovimClean": true,
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+    "vscode-neovim.statusLineSeparator": "",
     "vscode_custom_css.imports": [
         "file:///C:/Users/QUI/.dotfiles/vscode/ext/cuscssjs/statusbar.css"
     ],
@@ -188,6 +224,7 @@
         "button.background": "#0e7490",
         "editor.background": "#00000000",
         "editor.lineHighlightBackground": "#1f2937",
+        "editorCursor.foreground": "#64BC78",
         "editorLineNumber.activeForeground": "#0e7490",
         "editorLineNumber.foreground": "#404040",
         "editorStickyScroll.background": "#1a1a1a",
@@ -210,7 +247,8 @@
         "statusBarItem.errorForeground": "#ad5267",
         "statusBarItem.remoteBackground": "#00000000",
         "statusBarItem.remoteForeground": "#878181",
-        "terminal.background": "#00000000"
+        "terminal.background": "#00000000",
+        "terminalCursor.foreground": "#64BC78"
     },
     "workbench.editor.showTabs": "none",
     "workbench.editor.tabSizing": "fixed",

@@ -6,6 +6,11 @@ function Get-Vdff([string]$m) {
   wt -w 0 -p pwsh -d . pwsh -c git difftool $m
 }
 
+# cd with fzf
+function Get-FzCDir {
+  cd (fd --type d --hidden --follow | fzf)
+}
+
 # treer <root> <.../output.txt>
 function Get-Tree([string]$r, [string]$t) {
   ~\.dotfiles\treer\main.exe $r $t
@@ -23,6 +28,8 @@ function Set-SymlinkForce([string]$loc,[string]$targetLoc) {
 
 # Aliases
 Set-Alias -Name vim -Value nvim
+
+New-Alias -Name fzcd -Value Get-FzCDir
 
 New-Alias -Name _vdff -Value Get-Vdff
 New-Alias -Name _vdiff -Value Get-Vdff
