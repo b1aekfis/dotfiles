@@ -1,0 +1,39 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+# hard everforest (dark)
+# #e67e80
+# #a7c080
+# #7fbbb3
+# #d3c6aa
+# #83c092
+# #d699b6
+# #dbbc7f
+# #e69875
+
+# # Hp theme
+# format = '$hostname$directory$git_branch$git_commit$shell$direnv$env_var[󰰁](#dbbc7f) [󰫶](#e69875) [󰯾](#7fbbb3) [󰯾](#7fbbb3) [󱎤](#a7c080)$character'
+#
+# [directory]
+# style = 'bold italic #e67e80'
+#
+# [character]
+# format = '$symbol'
+# success_symbol = ''
+# # ...
+
+#
+format = "$hostname$directory$git_branch$git_commit$shell$direnv$env_var\n$character"
+
+[directory]
+style = 'bold italic #7fbbb3'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = 'fg:#a7c080'
+
+[character]
+success_symbol = '[❯](bold #dbbc7f) '
+error_symbol = '[x x](bold #e67e80) '
+vimcmd_symbol = '[❮](bold #dbbc7f) '
