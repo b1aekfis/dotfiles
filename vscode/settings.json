@@ -22,7 +22,7 @@
     "editor.folding": false,
     "editor.fontFamily": "Hack, monospace",
     "editor.fontLigatures": false,
-    "editor.fontSize": 14,
+    "editor.fontSize": 14.7,
     "editor.guides.bracketPairsHorizontal": false,
     "editor.guides.highlightActiveBracketPair": false,
     "editor.guides.indentation": false,
@@ -72,7 +72,7 @@
     "markdown-preview-enhanced.previewTheme": "newsprint.css",
     "markdown-preview-enhanced.revealjsTheme": "none.css",
     "material-icon-theme.files.color": "#90a4ae",
-    "material-icon-theme.folders.color": "#90a4ae",
+    "material-icon-theme.folders.color": "#0e7490",
     "material-icon-theme.hidesExplorerArrows": true,
     "material-icon-theme.opacity": 1,
     "material-icon-theme.saturation": 1,
@@ -148,16 +148,12 @@
         "stress_bljtz#"
     ],
     "todo-tree.highlights.customHighlight": {
-        "bljtz#": {
-            "background": "#00000000",
-            "foreground": "#58c7ff",
-            "hideFromTree": true,
-            "type": "text"
-        },
-        "bljtz@": {
-            "background": "#58c7ff",
-            "foreground": "#000000",
-            "hideFromTree": true,
+        "--issues--": {
+            "background": "#85e7e8",
+            "foreground": "#17202a",
+            "gutterIcon": "true",
+            "icon": "issue-opened",
+            "iconColour": "#85e7e8",
             "type": "text"
         },
         "FIXME": {
@@ -174,6 +170,25 @@
             "icon": "pin",
             "iconColour": "#ffa5d8"
         },
+        "TODO": {
+            "background": "#85e7e8",
+            "foreground": "#17202a",
+            "gutterIcon": "true",
+            "icon": "flame",
+            "iconColour": "#85e7e8"
+        },
+        "bljtz#": {
+            "background": "#00000000",
+            "foreground": "#58c7ff",
+            "hideFromTree": true,
+            "type": "text"
+        },
+        "bljtz@": {
+            "background": "#58c7ff",
+            "foreground": "#000000",
+            "hideFromTree": true,
+            "type": "text"
+        },
         "stress_bljtz#": {
             "background": "#00000000",
             "foreground": "#58c7ff",
@@ -189,21 +204,6 @@
             "icon": "pin",
             "iconColour": "#58c7ff",
             "type": "text"
-        },
-        "TODO": {
-            "background": "#85e7e8",
-            "foreground": "#17202a",
-            "gutterIcon": "true",
-            "icon": "flame",
-            "iconColour": "#85e7e8"
-        },
-        "--issues--": {
-            "background": "#85e7e8",
-            "foreground": "#17202a",
-            "gutterIcon": "true",
-            "icon": "issue-opened",
-            "iconColour": "#85e7e8",
-            "type": "text"
         }
     },
     "vscode_custom_css.imports": [
@@ -214,25 +214,28 @@
     "vscode_vibrancy.refreshInterval": 10,
     "window.commandCenter": false,
     "window.customTitleBarVisibility": "never",
+    "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "inherit",
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}",
     "window.titleBarStyle": "native",
     "workbench.activityBar.location": "hidden",
     "workbench.colorCustomizations": {
         "activityBarTop.activeBorder": "#00000000",
-        "breadcrumb.background": "#081d20",
-        "breadcrumb.foreground": "#878181",
-        "button.background": "#ad5267",
-        "editor.lineHighlightBackground": "#081d20",
-        "editorLineNumber.activeForeground": "#ad5267",
+        "breadcrumb.background": "#1a1a1a",
+        "breadcrumb.foreground": "#0e7490",
+        "button.background": "#0e7490",
+        "editor.background": "#1a1a1a",
+        "editor.lineHighlightBackground": "#1f2937",
+        "editorLineNumber.activeForeground": "#0e7490",
+        "editorLineNumber.foreground": "#404040",
         "editorSuggestWidget.background": "#081d20",
         "focusBorder": "#00000000",
-        "list.focusForeground": "#ad5267",
+        "list.focusForeground": "#0e7490",
         "panel.border": "#00000000",
         "quickInput.background": "#081d20",
-        "sideBar.foreground": "#878181",
+        "sideBar.background": "#1a1a1a",
         "sideBarSectionHeader.border": "#00000000",
-        "statusBar.background": "#00000000",
+        "statusBar.background": "#1a1a1a",
         "statusBar.border": "#00000000",
         "statusBar.debuggingBackground": "#00000000",
         "statusBar.focusBorder": "#00000000",
@@ -241,7 +244,8 @@
         "statusBarItem.errorBackground": "#ffffff",
         "statusBarItem.errorForeground": "#ad5267",
         "statusBarItem.remoteBackground": "#00000000",
-        "statusBarItem.remoteForeground": "#878181"
+        "statusBarItem.remoteForeground": "#878181",
+        "terminal.background": "#00000000"
     },
     "workbench.colorTheme": "Default Dark+",
     "workbench.editor.showTabs": "none",
@@ -251,5 +255,8 @@
         "*.txt": "default"
     },
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.preferredDarkColorTheme": "Default Dark+"
+    "workbench.preferredDarkColorTheme": "Default Dark+",
+    "workbench.settings.applyToAllProfiles": [
+        "workbench.colorCustomizations"
+    ]
 }

@@ -5,23 +5,23 @@
 }
 
 #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- INSERT --"]{
-  background-color: #ad5267;
-  color: whitesmoke
+  background-color: #d3c6aa;
+  color: black 
 }
 
 #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- NORMAL --"]{
-  background-color: #4bae7c; /* or #52ad98 */
+  background-color: #a7c080; /* or #4bae7c or #52ad98 */
   color: black;
 }
 
 #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- VISUAL --"], #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- VISUAL LINE --"]{
-  background-color: #c0b708;
+  background-color: #e67e80;
   color: black;
 }
 
 #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label="-- REPLACE --"]{
-  background-color: #9f62a7;
-  color: whitesmoke
+  background-color: #e69875;
+  color: black 
 }
 
 #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label^="/"], #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label^=":"]{
@@ -30,7 +30,7 @@
 }
 
 #vscodevim\.vim\.primary.statusbar-item.left.last-visible-item[aria-label$="written"]{
-  color: #95ffa4;
+  color: #a7c080;
 }
 
 #vscodevim\.vim\.showcmd {

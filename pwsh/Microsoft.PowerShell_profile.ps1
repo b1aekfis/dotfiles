@@ -41,7 +41,7 @@ New-Alias -Name nisl_force -Value Set-SymLink-Force #ni symlink (-force)
 # oh-my-posh init pwsh --config '<a path to a local configuration file>' | Invoke-Expression
 # ============================================================================================================================
 
-oh-my-posh init pwsh --config 'C:\Users\QUI\.dotfiles\omp\themes\stdHp.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'C:\Users\QUI\.dotfiles\omp\themes\evfrHp.omp.json' | Invoke-Expression
 
 # ==========================
 # VIRTUAL_ENV_DISABLE_PROMPT
