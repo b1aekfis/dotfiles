@@ -1,6 +1,11 @@
 # Theme
 Invoke-Expression (&starship init powershell)
 
+# _vdff (_vdiff) m1, m2, ...
+function Get-Vdff([string]$m) {
+  wt -w 0 -p pwsh -d . pwsh -c git difftool $m
+}
+
 # cd with fzf
 function Get-FzCDir {
   cd (fd --type d --hidden --follow | fzf)
@@ -23,6 +28,12 @@ function Set-SymlinkForce([string]$loc,[string]$targetLoc) {
 
 # Aliases
 Set-Alias -Name vim -Value nvim
+
+New-Alias -Name _vdff -Value Get-Vdff
+New-Alias -Name _vdiff -Value Get-Vdff
+function Get-GitDiffTool{& git difftool $args}
+New-Alias -Name vdff -Value Get-GitDiffTool
+New-Alias -Name vdiff -Value Get-GitDiffTool
 
 New-Alias -Name fzcd -Value Get-FzCDir
 
