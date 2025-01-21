@@ -41,6 +41,8 @@ function Set-SymlinkForce([string]$loc,[string]$targetLoc) {
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name ffim -Value Get-FFVim
 
+Set-Alias -Name lzg -Value lazygit
+
 New-Alias -Name _vdff -Value Get-Vdff
 New-Alias -Name _vdiff -Value Get-Vdff
 function Get-GitDiffTool{& git difftool $args}
