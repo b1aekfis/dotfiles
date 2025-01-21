@@ -39,6 +39,8 @@ function Set-SymlinkForce($link,$target) {
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name ffim -Value Get-FFVim
 
+Set-Alias -Name lzg -Value lazygit
+
 New-Alias -Name gdt -Value Get-GitDifftool
 
 New-Alias -Name ffcd -Value Get-FFCDir

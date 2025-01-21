@@ -1,5 +1,6 @@
 ```
 .
+├───lazygit
 ├───pwsh
 ├───treer
 ├───vim
