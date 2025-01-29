@@ -6,7 +6,13 @@ function Get-GitDifftool($file){git difftool $file}
 
 # cd with fzf
 function Get-FFCDir {
-  $dir = fd --type d --hidden --follow | fzf --height 40%
+  # opts
+  $dir = fd --type d --hidden --follow | fzf `
+    --style minimal `
+    --layout reverse `
+    --height 40% `
+    --pointer '>'
+
   if($dir -ne $null) {
     cd $dir
   }
@@ -14,7 +20,18 @@ function Get-FFCDir {
 
 # open file with fzf (Vim)
 function Get-FFVim {
-  $file = fd --type f --hidden --follow | fzf --height 40%
+  # opts
+  $file = fd --type f --hidden --follow | fzf `
+    --style minimal `
+    --layout reverse `
+    --height 40% `
+    --pointer '>' `
+    --color 'spinner:#af5fff' `
+    --multi `
+    --bind 'F4:toggle-preview' `
+    --preview-window ':hidden' `
+    --preview 'bat --color=always --plain {}'
+
   if($file -ne $null) {
     vim $file
   }
