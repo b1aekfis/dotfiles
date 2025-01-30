@@ -1,0 +1,17 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = "$hostname$directory$git_branch$git_commit$shell$direnv$env_var\n$character"
+
+[directory]
+style = 'italic #7fbbb3'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = 'fg:#a7c080'
+
+[character]
+success_symbol = '[❯](#dbbc7f) '
+error_symbol = '[](#e67e80) '
+vimcmd_symbol = '[❮](#dbbc7f) '
