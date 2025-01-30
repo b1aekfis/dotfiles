@@ -9,3 +9,10 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[diff]
+  # diff tool
+  tool = nvimdiff
+[merge]
+  tool = nvimdiff
+[mergetool "nvimdiff"]
+  layout = "LOCAL,BASE,REMOTE / MERGED"
