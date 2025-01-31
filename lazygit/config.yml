@@ -6,3 +6,10 @@ gui:
       - '#999999'
     activeBorderColor:
       - '#017E70'
+customCommands:
+  - key: "C"
+    command: "git cz"
+    description: "commit with commitizen"
+    context: "files"
+    loadingText: "opening commitizen commit tool"
+    subprocess: true
