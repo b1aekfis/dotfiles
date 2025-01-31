@@ -25,7 +25,6 @@ return {
       },
       files = {
         file_icons = false,
-        fd_opts = [[--color=never --type f --type l --hidden --exclude .git]],
         hls = {
           border = "FloatBorder",
         },
