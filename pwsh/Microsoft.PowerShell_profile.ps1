@@ -1,6 +1,9 @@
 # Theme
 Invoke-Expression (&starship init powershell)
 
+# gdt file1, file2, ...
+function Get-GitDifftool($file){git difftool $file}
+
 # cd with fzf
 function Get-FFCDir {
   $dir = fd --type d --hidden --follow | fzf --height 40%
@@ -35,6 +38,8 @@ function Set-SymlinkForce($link,$target) {
 # Aliases
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name ffim -Value Get-FFVim
+
+New-Alias -Name gdt -Value Get-GitDifftool
 
 New-Alias -Name ffcd -Value Get-FFCDir
 
@@ -82,4 +87,3 @@ Set-PSReadLineOption @PSReadLineOptions
 
 # PSStyle
 $PSStyle.FileInfo.Directory = $PSStyle.Foreground.FromRgb(0x3a94c4)
-$PSStyle.Formatting.TableHeader = "$($PSStyle.Formatting.TableHeader)$($PSStyle.BoldOff)$($PSStyle.Italic)"
