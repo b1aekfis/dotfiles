@@ -1,3 +1,5 @@
 {
-  "path": "cz-git"
+  "path": "cz-git",
+  "useAI": true,
+  "aiNumber": 2
 }
