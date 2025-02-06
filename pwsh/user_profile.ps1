@@ -11,6 +11,9 @@ $PSReadLineOptions = @{
 }
 Set-PSReadLineOption @PSReadLineOptions
 
+Set-PSReadLineKeyHandler -Chord "Ctrl+w" -Function BackwardKillWord
+Set-PSReadLineKeyHandler -Chord "Ctrl+p" -Function AcceptSuggestion # key accept the current inline suggestion
+
 # PSStyle
 $PSStyle.FileInfo.Directory = $PSStyle.Foreground.FromRgb(0x3a94c4)
 
