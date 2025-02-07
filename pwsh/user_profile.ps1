@@ -1,6 +1,3 @@
-# Theme
-Invoke-Expression (&starship init powershell)
-
 # Env
 $env:VIRTUAL_ENV_DISABLE_PROMPT=1
 
@@ -8,6 +5,16 @@ $env:VIRTUAL_ENV_DISABLE_PROMPT=1
 $PSReadLineOptions = @{
   EditMode = "Vi"
   BellStyle = "None"
+  ViModeIndicator = "Script"
+  ViModeChangeHandler = {
+    if ($args[0] -eq 'Command') {
+        # Set the cursor to a blinking block.
+        Write-Host -NoNewLine "`e[1 q"
+    } else {
+        # Set the cursor to a blinking line.
+        Write-Host -NoNewLine "`e[5 q"
+    }
+  }
 }
 Set-PSReadLineOption @PSReadLineOptions
 
@@ -16,6 +23,9 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+p" -Function AcceptSuggestion # key accept
 
 # PSStyle
 $PSStyle.FileInfo.Directory = $PSStyle.Foreground.FromRgb(0x3a94c4)
+
+# Theme
+Invoke-Expression (&starship init powershell)
 
 # Aliases 
 Set-Alias -Name vim -Value nvim
