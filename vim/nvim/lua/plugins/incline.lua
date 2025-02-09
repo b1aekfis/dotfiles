@@ -33,9 +33,9 @@ return {
 
       -- diff summary
       local smr = vim.b.minidiff_summary
-      local a_smr = smr and smr.add and smr.add > 0 and '  ' .. smr.add or ''
-      local r_smr = smr and smr.delete and smr.delete > 0 and '  ' .. smr.delete or ''
-      local m_smr = smr and smr.change and smr.change > 0 and '  ' .. smr.change or ''
+      local add_smr = smr and smr.add and smr.add > 0 and '  ' .. smr.add or ''
+      local del_smr = smr and smr.delete and smr.delete > 0 and '  ' .. smr.delete or ''
+      local mod_smr = smr and smr.change and smr.change > 0 and '  ' .. smr.change or ''
 
       -- searchcount
       local scter = vim.fn.searchcount { maxcount = 999 }
@@ -43,10 +43,10 @@ return {
 
       return {
         props.focused and {
-          { a_smr, guifg = '#a7c080', },
-          { m_smr, guifg = '#7fbbb3', },
-          { r_smr, guifg = '#e67e80', },
-          a_smr == '' and m_smr == '' and r_smr == '' and '' or ' ',
+          { add_smr, guifg = '#a7c080', },
+          { mod_smr, guifg = '#7fbbb3', },
+          { del_smr, guifg = '#e67e80', },
+          add_smr == '' and mod_smr == '' and del_smr == '' and '' or ' ',
           guibg = '#000000',
         } or '',
 
