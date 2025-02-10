@@ -9,10 +9,9 @@
 │           ├───config
 │           └───plugins
 ├───vscode
-│   ├───ext
-│   │   ├───cuscssjs
-│   │   └───mpe
-│   │       └───.crossnote
-│   └───workspaces
+│   └───ext
+│       ├───cuscssjs
+│       └───mpe
+│           └───.crossnote
 └───wt
 ```

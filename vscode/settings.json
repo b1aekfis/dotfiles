@@ -9,13 +9,6 @@
     "background.useFront": false,
     "breadcrumbs.enabled": true,
     "breadcrumbs.icons": false,
-    "chronicler.ffmpeg-binary": "c:\\Users\\QUI\\ffmpeg-7.0.1-essentials_build\\ffmpeg-7.0.1-essentials_build\\bin\\ffmpeg.exe",
-    "chronicler.recording-defaults": {
-        "animatedGif": true,
-        "countdown": 5,
-        "flags": null,
-        "fps": 12
-    },
     "diffEditor.renderSideBySide": false,
     "editor.bracketPairColorization.enabled": false,
     "editor.cursorBlinking": "solid",
@@ -64,8 +57,6 @@
         ],
         "version": "2.0.0"
     },
-    "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.donotVerifyTags": true,
     "markdown-preview-enhanced.alwaysShowBacklinksInPreview": false,
     "markdown-preview-enhanced.codeBlockTheme": "github-dark.css",
     "markdown-preview-enhanced.enablePreviewZenMode": true,
@@ -96,9 +87,6 @@
                 "${env:windir}\\Sysnative\\cmd.exe",
                 "${env:windir}\\System32\\cmd.exe"
             ]
-        },
-        "Git Bash": {
-            "source": "Git Bash"
         },
         "PowerShell": {
             "icon": "terminal-powershell",
