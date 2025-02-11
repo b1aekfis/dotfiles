@@ -65,10 +65,6 @@ function Get-FFim { # Get: open file with Fzf (Vim)
   }
 }
 
-function Get-Treer([string]$r, [string]$t) { # Get: treer <root> <.../tree.txt>
-  ~\.dotfiles\treer\main.exe $r $t
-}
-
 function Set-Symlink($link,$target) { # Set: symlink
   ni -itemtype symboliclink -path $link -target $target
 }
