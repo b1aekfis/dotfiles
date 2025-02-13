@@ -33,11 +33,16 @@
                 "cwd": "${fileDirname}",
                 "environment": [],
                 "externalConsole": false,
-                "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+                "linux": {
+                    "miDebuggerPath": "/usr/bin/gdb"
+                },
                 "MIMode": "gdb",
-                "name": "C/C++: g++.exe build and debug active file",
-                "preLaunchTask": "C/C++: g++.exe build active file",
-                "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "name": "C/C++: build and debug active file",
+                "osx": {
+                    "MIMode": "lldb"
+                },
+                "preLaunchTask": "C/C++: build active file",
+                "program": "${fileDirname}/${fileBasenameNoExtension}",
                 "request": "launch",
                 "setupCommands": [
                     {
@@ -52,7 +57,10 @@
                     }
                 ],
                 "stopAtEntry": false,
-                "type": "cppdbg"
+                "type": "cppdbg",
+                "windows": {
+                    "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe"
+                }
             }
         ],
         "version": "2.0.0"
@@ -70,9 +78,11 @@
     "material-icon-theme.saturation": 1,
     "screencastMode.fontSize": 20,
     "screencastMode.mouseIndicatorColor": "#ad5267",
+    "settingsSync.keybindingsPerPlatform": false,
     "svg.preview.mode": "svg",
     "task.problemMatchers.neverPrompt": false,
     "terminal.integrated.automationProfile.windows": null,
+    "terminal.integrated.cwd": "${fileDirname}",
     "terminal.integrated.defaultProfile.linux": "PowerShell",
     "terminal.integrated.defaultProfile.osx": "PowerShell",
     "terminal.integrated.defaultProfile.windows": "PowerShell",
@@ -158,6 +168,12 @@
             "iconColour": "#85e7e8"
         }
     },
+    "vscode_custom_css.imports": [
+        "file://${userHome}/.config/vscode/ext/cuscssjs/statusbar.css"
+    ],
+    "vscode_custom_css.statusbar": false,
+    "vscode_vibrancy.opacity": 0,
+    "vscode_vibrancy.refreshInterval": 10,
     "vscode-neovim.ctrlKeysForNormalMode": [
         "a",
         "b",
@@ -192,12 +208,6 @@
     "vscode-neovim.neovimClean": true,
     "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
     "vscode-neovim.statusLineSeparator": "",
-    "vscode_custom_css.imports": [
-        "file:///C:/Users/QUI/.dotfiles/vscode/ext/cuscssjs/statusbar.css"
-    ],
-    "vscode_custom_css.statusbar": false,
-    "vscode_vibrancy.opacity": 0,
-    "vscode_vibrancy.refreshInterval": 10,
     "window.commandCenter": false,
     "window.customTitleBarVisibility": "never",
     "window.menuBarVisibility": "toggle",
