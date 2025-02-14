@@ -1,0 +1,24 @@
+[general]
+import = [
+"~/.config/alacritty/onehalf-dark-yz.toml",
+]
+[window]
+decorations = "None"
+dimensions = { columns = 100, lines = 28 }
+position = { x = 100, y = 100 }
+opacity = 0.68
+blur = true
+[cursor]
+style = { shape = "Beam" }
+[colors.cursor]
+cursor = "#64bc78"
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+bold = { style = "Regular" }
+size = 12
+offset = { y = 4 }
+glyph_offset = { y = 2 }
+[selection]
+save_to_clipboard = true
+[terminal]
+shell = { program = "pwsh", args = ["-WorkingDirectory ~",] }

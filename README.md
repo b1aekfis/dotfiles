@@ -1,5 +1,6 @@
 ```
 .
+├───alacritty
 ├───lazygit
 ├───pwsh
 ├───treer
