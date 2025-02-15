@@ -3,6 +3,10 @@ $env:VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # PSReadLine
 $PSReadLineOptions = @{
+  Colors = @{
+    # default is InlinePrediction = "`e[97;2;3m"
+    InlinePrediction = "$($PSStyle.Foreground.FromRgb(0x707070))$($PSStyle.Italic)"
+  }
   EditMode = "Vi"
   BellStyle = "None"
   ViModeIndicator = "Script"
