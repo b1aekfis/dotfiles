@@ -13,10 +13,6 @@ vim.keymap.set("n", "QF", function() vim.diagnostic.setqflist() end, opts)
 -- tabline
 vim.keymap.set("n", "<Leader>B", function() vim.o.showtabline = vim.o.showtabline ~= 2 and 2 or 0 end, opts)
 
--- fzf
-vim.keymap.set("n", "<Leader>ff", "<Cmd>FzfLua files<CR>")
-vim.keymap.set("n", "<Leader>Ff", "<Cmd>FzfLua files cwd=~<CR>") -- user files
-
 -- Lazy
 vim.keymap.set("n", "<Leader>lz", "<Cmd>Lazy<CR>")
 

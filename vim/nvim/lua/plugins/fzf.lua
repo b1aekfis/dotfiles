@@ -3,7 +3,13 @@ return {
   event = { "CmdlineEnter" },
   keys = {
     {
+      "<Leader>ff", "<Cmd>FzfLua files<CR>", silent = true
+    },
+    {
       "<Leader>gf", "<Cmd>FzfLua git_files<CR>", silent = true
+    },
+    {
+      "<Leader>Ff", "<Cmd>FzfLua files cwd=~<CR>", silent = true -- user files
     },
   },
   dependencies = { "nvim-tree/nvim-web-devicons", },
