@@ -1,6 +1,11 @@
 return {
   "ibhagwan/fzf-lua",
   event = { "CmdlineEnter" },
+  keys = {
+    {
+      "<Leader>gf", "<Cmd>FzfLua git_files<CR>", silent = true
+    },
+  },
   dependencies = { "nvim-tree/nvim-web-devicons", },
   opts = function()
 
