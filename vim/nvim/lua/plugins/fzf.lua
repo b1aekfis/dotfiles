@@ -14,6 +14,7 @@ return {
     return {
       defaults = {
         formatter = 'path.filename_first',
+        file_icons = false,
       },
       fzf_colors = {
         ["pointer"] = "#d7005f",
@@ -29,7 +30,6 @@ return {
         ["--style"] = "minimal",
       },
       files = {
-        file_icons = false,
         hls = {
           border = "FloatBorder",
         },
