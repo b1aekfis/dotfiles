@@ -1,0 +1,30 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/AppData/Roaming/alacritty/alacritty.toml: alacritty/alacritty.toml
+    ~/.config/alacritty/onehalf-dark-yz.toml: alacritty/onehalf-dark-yz.toml
+    ~/AppData/Local/lazygit/config.yml: lazygit/config.yml
+    ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: pwsh/user_profile.ps1
+    ~/AppData/Local/nvim: vim/nvim
+    ~/AppData/Roaming/Code/User/settings.json: vscode/settings.json
+    ~/AppData/Roaming/Code/User/keybindings.json: vscode/keybindings.json
+    ~/AppData/Roaming/Code/User/tasks.json: vscode/tasks.json
+    ~/.crossnote: vscode/ext/mpe/.crossnote
+    ~/.config/vscode/ext:
+      glob: true
+      exclude: [ vscode/ext/mpe ]
+      path: vscode/ext/*
+    ~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json: wt/settings.json
+    ~/.bashrc: .bashrc
+    ~/.czrc: .czrc
+    ~/.fdignore: .fdignore
+    ~/.gitconfig: .gitconfig
+    ~/.config/starship.toml:
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
