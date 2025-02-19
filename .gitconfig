@@ -4,6 +4,7 @@
 	email = 148613625+b1aekfis@users.noreply.github.com
 [alias]
 	status = !gst
+  root = rev-parse --show-toplevel
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

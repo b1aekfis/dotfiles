@@ -1,5 +1,16 @@
 # Env
 $env:VIRTUAL_ENV_DISABLE_PROMPT = 1
+$env:FZF_DEFAULT_OPTS = "
+  --style minimal
+  --layout reverse
+  --height 40%
+  --pointer '>'
+  --color 'spinner:#af5fff'
+  --multi
+  --bind 'F4:toggle-preview'
+  --preview-window ':hidden'
+  --preview 'bat --color=always --plain {}'
+  "
 
 # PSReadLine
 $PSReadLineOptions = @{
@@ -39,12 +50,7 @@ Set-Alias -Name lzg -Value lazygit
 Set-Alias -Name trash -Value Remove-ItemSafely
 
 function Get-FFir { # Get: cd with Fzf
-  # opts
-  $dir = fd --type d --hidden --follow | fzf `
-    --style minimal `
-    --layout reverse `
-    --height 40% `
-    --pointer '>'
+  $dir = fd --type d --hidden --follow | fzf
 
   if($dir -ne $null) {
     cd $dir
@@ -52,19 +58,22 @@ function Get-FFir { # Get: cd with Fzf
 }
 
 function Get-FFim { # Get: open file with Fzf (Vim)
-  # opts
-  $file = fd --type f --hidden --follow | fzf `
-    --style minimal `
-    --layout reverse `
-    --height 40% `
-    --pointer '>' `
-    --color 'spinner:#af5fff' `
-    --multi `
-    --bind 'F4:toggle-preview' `
-    --preview-window ':hidden' `
-    --preview 'bat --color=always --plain {}'
+  param (
+    [Parameter(Mandatory=$false)]
+    [switch]$git # ffim -g
+  )
+
+  $file = if ($git) {
+    if($(git root)) {
+      git ls-files --exclude-standard --cached --others --full-name $(git root) | fzf
+    }
+  }
+  else {
+    fd --type f --hidden --follow | fzf
+  }
 
   if($file -ne $null) {
+    if ($git) { cd $(git root) }
     vim $file
   }
 }
