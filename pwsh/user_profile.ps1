@@ -1,5 +1,5 @@
 # Env
-$env:VIRTUAL_ENV_DISABLE_PROMPT=1
+$env:VIRTUAL_ENV_DISABLE_PROMPT = 1
 
 # PSReadLine
 $PSReadLineOptions = @{
@@ -31,7 +31,7 @@ $PSStyle.FileInfo.Directory = $PSStyle.Foreground.FromRgb(0x3a94c4)
 # Theme
 Invoke-Expression (&starship init powershell)
 
-# Aliases 
+# Aliases
 Set-Alias -Name vim -Value nvim
 
 Set-Alias -Name lzg -Value lazygit
