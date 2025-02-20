@@ -40,6 +40,11 @@ return {
           border = "FloatBorder",
         },
       },
+      git = {
+        files = {
+          cmd = "git ls-files --exclude-standard --cached --others"
+        },
+      },
       actions = {
         files = {
           ["enter"] = actions.file_edit,
