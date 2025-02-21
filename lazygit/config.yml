@@ -6,6 +6,19 @@ gui:
       - '#999999'
     activeBorderColor:
       - '#017E70'
+  spinner:
+    frames:
+      - ⠋
+      - ⠙
+      - ⠹
+      - ⠸
+      - ⠼
+      - ⠴
+      - ⠦
+      - ⠧
+      - ⠇
+      - ⠏
+
 customCommands:
   - key: "C"
     command: "git cz"
