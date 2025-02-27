@@ -9,6 +9,7 @@
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
     ~/.config/alacritty/onehalf-dark-yz.toml: alacritty/onehalf-dark-yz.toml
     ~/.config/lazygit/config.yml: lazygit/config.yml
+    ~/.config/clangd: ls/clangd
     ~/.config/powershell/Microsoft.PowerShell_profile.ps1: pwsh/user_profile.ps1
     ~/.config/nvim: vim/nvim
     ~/.config/Code/User/settings.json: vscode/settings.json

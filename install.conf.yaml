@@ -9,6 +9,7 @@
     ~/AppData/Roaming/alacritty/alacritty.toml: alacritty/alacritty.toml
     ~/.config/alacritty/onehalf-dark-yz.toml: alacritty/onehalf-dark-yz.toml
     ~/AppData/Local/lazygit/config.yml: lazygit/config.yml
+    ~/AppData/Local/clangd: ls/clangd
     ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: pwsh/user_profile.ps1
     ~/AppData/Local/nvim: vim/nvim
     ~/AppData/Roaming/Code/User/settings.json: vscode/settings.json
