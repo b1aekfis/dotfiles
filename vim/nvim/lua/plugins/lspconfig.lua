@@ -31,8 +31,15 @@ return {
         })
       end,
       ["clangd"] = function()
+        local is_windows = vim.fn.has('win32') == 1
+        local gxx_path = vim.fn.systemlist((is_windows and "where g++" or "which g++"))[1] or ""
+        local clangd_cmd = { 'clangd' }
+        if gxx_path ~= "" then
+          table.insert(clangd_cmd, "--query-driver=" .. gxx_path)
+        end
         nvim_lsp["clangd"].setup({
           capabilities = capabilities,
+          cmd = clangd_cmd,
         })
       end,
       ["lua_ls"] = function()
