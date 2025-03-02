@@ -25,7 +25,8 @@ $PSReadLineOptions = @{
     if ($args[0] -eq 'Command') {
         # Set the cursor to a blinking block.
         Write-Host -NoNewLine "`e[1 q"
-    } else {
+    }
+    else {
         # Set the cursor to a blinking line.
         Write-Host -NoNewLine "`e[5 q"
     }
@@ -42,29 +43,36 @@ $PSStyle.FileInfo.Directory = $PSStyle.Foreground.FromRgb(0x3a94c4)
 # Theme
 Invoke-Expression (&starship init powershell)
 
-# Aliases
-Set-Alias -Name vim -Value nvim
+# Function
+if ($IsWindows) {
+  function trash {
+    param(
+      [Parameter(Mandatory=$true)]
+      [string]$path
+    )
 
-Set-Alias -Name lzg -Value lazygit
-
-Set-Alias -Name trash -Value Remove-ItemSafely
+    $shell = New-Object -ComObject Shell.Application
+    $file = $shell.Namespace((Get-Item $path).DirectoryName).ParseName((Get-Item $path).Name)
+    $recycleBin = $shell.Namespace(10)
+    $recycleBin.MoveHere($file, 0)
+  }
+}
 
 function Get-FFir { # Get: cd with Fzf
   $dir = fd --type d --hidden --follow | fzf
 
-  if($dir -ne $null) {
+  if ($dir -ne $null) {
     cd $dir
   }
 }
 
-function Get-FFim { # Get: open file with Fzf (Vim)
+function Get-FFim { # Get: open file with Fzf (nvim)
   param (
-    [Parameter(Mandatory=$false)]
     [switch]$git # ffim -g
   )
 
   $file = if ($git) {
-    if($(git root)) {
+    if ($(git root)) {
       git ls-files --exclude-standard --cached --others --full-name $(git root) | fzf
     }
   }
@@ -72,21 +80,30 @@ function Get-FFim { # Get: open file with Fzf (Vim)
     fd --type f --hidden --follow | fzf
   }
 
-  if($file -ne $null) {
+  if ($file -ne $null) {
     if ($git) { cd $(git root) }
-    vim $file
+    nvim $file
   }
 }
 
-function Set-Symlink($link,$target) { # Set: symlink
-  ni -itemtype symboliclink -path $link -target $target
+function Set-Symlink { # Set: symlink
+  param (
+    [switch]$force,
+    [Parameter(Mandatory=$true)]
+    $link,
+    [Parameter(Mandatory=$true)]
+    $target
+  )
+
+  if ($force) { $isForce = $true } else { $isForce = $false }
+  ni -Itemtype symboliclink -Path $link -Target $target -Force:$isForce
 }
 Set-Alias -Name nisl -Value Set-Symlink
 
-function Set-SymlinkForce($link,$target) { # Set: symlink with -force
-  ni -itemtype symboliclink -path $link -target $target -force
-}
-Set-Alias -Name nislf -Value Set-SymlinkForce
+# Aliases
+Set-Alias -Name vim -Value nvim
+
+Set-Alias -Name lzg -Value lazygit
 
 function Get-GitDifftool($file){git difftool $file} # Get: git difftool arg1, arg2, ...
 Set-Alias -Name gdt -Value Get-GitDifftool
