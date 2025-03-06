@@ -3,6 +3,7 @@
         "editor.fontFamily": "Consolas, 'Courier New', monospace"
     },
     "[plaintext]": {
+        "editor.fontFamily":"Consolas, 'Courier New', monospace",
         "editor.unicodeHighlight.ambiguousCharacters": false,
         "editor.unicodeHighlight.invisibleCharacters": false
     },
