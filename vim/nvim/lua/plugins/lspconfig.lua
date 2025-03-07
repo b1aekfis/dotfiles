@@ -2,13 +2,17 @@ return {
   "neovim/nvim-lspconfig",
   cmd = "LspStart",
   dependencies = {
-    -- mason
+    -- mason-lspconfig
     {
-      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
       dependencies = {
-        "williamboman/mason-lspconfig.nvim"
+        -- mason
+        "williamboman/mason.nvim",
+        opts = {} -- ensure setup
       },
-      opts = {}
+      opts = {
+        ensure_installed = { "clangd", "rust_analyzer", "lua_ls" },
+      }
     },
     -- cmp-nvim-lsp
     { "hrsh7th/cmp-nvim-lsp" },
@@ -16,7 +20,6 @@ return {
     {
       "folke/lazydev.nvim",
       ft = "lua",
-      opts = {}
     },
   },
   config = function()
