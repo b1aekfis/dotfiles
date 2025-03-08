@@ -123,7 +123,7 @@
                 "hidden": false,
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash",
-                "startingDirectory": "C:\\Users\\QUI",
+                "startingDirectory": "~",
                 "tabTitle": "Git Bash"
             }
         ]
