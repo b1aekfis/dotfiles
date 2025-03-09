@@ -1,16 +1,9 @@
 # Env
 $env:VIRTUAL_ENV_DISABLE_PROMPT = 1
-$env:FZF_DEFAULT_OPTS = "
-  --style minimal
-  --layout reverse
-  --height 40%
-  --pointer '>'
-  --color 'spinner:#af5fff'
-  --multi
-  --bind 'F4:toggle-preview'
-  --preview-window ':hidden'
-  --preview 'bat --color=always --plain {}'
-  "
+
+# Include
+$dotfilesRoot = Split-Path -Parent (Get-Item $MyInvocation.MyCommand.Path).Target
+Import-Module (Join-Path $dotfilesRoot "modules/fzf_helper.psm1")
 
 # PSReadLine
 $PSReadLineOptions = @{
@@ -56,49 +49,21 @@ if ($IsWindows) {
     $recycleBin = $shell.Namespace(10)
     $recycleBin.MoveHere($file, 0)
   }
-}
 
-function Get-FFir { # Get: cd with Fzf
-  $dir = fd --type d --hidden --follow | fzf
+  function Set-Symlink { # Set: symlink
+    param (
+      [switch]$force,
+      [Parameter(Mandatory=$true)]
+      $link,
+      [Parameter(Mandatory=$true)]
+      $target
+    )
 
-  if ($dir -ne $null) {
-    cd $dir
+    if ($force) { $isForce = $true } else { $isForce = $false }
+    ni -Itemtype symboliclink -Path $link -Target $target -Force:$isForce
   }
+  Set-Alias -Name nisl -Value Set-Symlink
 }
-
-function Get-FFim { # Get: open file with Fzf (nvim)
-  param (
-    [switch]$git # ffim -g
-  )
-
-  $file = if ($git) {
-    if ($(git root)) {
-      git ls-files --exclude-standard --cached --others --full-name $(git root) | fzf
-    }
-  }
-  else {
-    fd --type f --hidden --follow | fzf
-  }
-
-  if ($file -ne $null) {
-    if ($git) { cd $(git root) }
-    nvim $file
-  }
-}
-
-function Set-Symlink { # Set: symlink
-  param (
-    [switch]$force,
-    [Parameter(Mandatory=$true)]
-    $link,
-    [Parameter(Mandatory=$true)]
-    $target
-  )
-
-  if ($force) { $isForce = $true } else { $isForce = $false }
-  ni -Itemtype symboliclink -Path $link -Target $target -Force:$isForce
-}
-Set-Alias -Name nisl -Value Set-Symlink
 
 # Aliases
 Set-Alias -Name vim -Value nvim
