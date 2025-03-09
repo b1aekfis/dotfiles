@@ -64,7 +64,6 @@ return {
           winblend = 0,
         },
         position = { row = 3, col = "88%" },
-        timeout = 1000,
       },
     },
     -- presets
