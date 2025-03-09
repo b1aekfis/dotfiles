@@ -1,7 +1,5 @@
-[user]
-	name = b1aekfis
-	mail = b1aekfis@gmail.com
-	email = 148613625+b1aekfis@users.noreply.github.com
+[includeIf "gitdir:~/"]
+  path = ~/.gitconfig.local
 [alias]
 	status = !gst
   root = rev-parse --show-toplevel
