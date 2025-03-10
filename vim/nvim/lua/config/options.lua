@@ -1,7 +1,7 @@
 vim.g.mapleader = '\\'
 vim.g.maplocalleader = ' '
 
-vim.g.netrw_altv = 1
+-- vim.g.netrw_altv = 1
 
 vim.opt.shadafile = 'NONE'
 vim.opt.swapfile = false

@@ -27,9 +27,6 @@ vim.keymap.set("n", "sk", "<c-w>k", opts)
 vim.keymap.set("n", "sl", "<c-w>l", opts)
 vim.keymap.set("n", "sw", "<c-w>w", opts)
 
--- explorer
-vim.keymap.set("n", "<F2>", "<Cmd>Ex<CR>", opts)
-
 -- wt
 vim.keymap.set("n", "<Leader>wt",
   function()
