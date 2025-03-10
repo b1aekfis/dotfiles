@@ -38,6 +38,12 @@ vim.keymap.set("n", "<F7>",
     vim.cmd([[!wt -w 0 sp -H --title vim -d ]] .. vim.fn.expand('%:p:h'))
   end, opts)
 
+-- lazygit
+vim.keymap.set("n", "<Leader>gg",
+  function()
+    vim.cmd([[!wt -w 0 nt -p PowerShell -d ]] .. vim.fn.expand('%:p:h') .. [[ lazygit]])
+  end, opts)
+
 -- term
 vim.keymap.set("t", "<a-s-w>", "<c-\\><c-n>")
 
