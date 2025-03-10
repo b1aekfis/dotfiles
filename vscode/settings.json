@@ -66,12 +66,6 @@
         ],
         "version": "2.0.0"
     },
-    "markdown-preview-enhanced.alwaysShowBacklinksInPreview": false,
-    "markdown-preview-enhanced.codeBlockTheme": "github-dark.css",
-    "markdown-preview-enhanced.enablePreviewZenMode": true,
-    "markdown-preview-enhanced.liveUpdate": false,
-    "markdown-preview-enhanced.previewTheme": "newsprint.css",
-    "markdown-preview-enhanced.revealjsTheme": "none.css",
     "material-icon-theme.files.color": "#90a4ae",
     "material-icon-theme.folders.color": "#0e7490",
     "material-icon-theme.hidesExplorerArrows": true,

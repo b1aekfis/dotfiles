@@ -15,11 +15,7 @@
     ~/Library/Application\ Support/Code/User/settings.json: vscode/settings.json
     ~/Library/Application\ Support/Code/User/keybindings.json: vscode/keybindings.json
     ~/Library/Application\ Support/Code/User/tasks.json: vscode/tasks.json
-    ~/.crossnote: vscode/ext/mpe/.crossnote
-    ~/.config/vscode/ext:
-      glob: true
-      exclude: [ vscode/ext/mpe ]
-      path: vscode/ext/*
+    ~/.config/vscode/ext: vscode/ext
     ~/.bashrc: .bashrc
     ~/.czrc: .czrc
     ~/.fdignore: .fdignore
