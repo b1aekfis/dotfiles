@@ -66,9 +66,20 @@ if ($IsWindows) {
   Set-Alias -Name nisl -Value Set-Symlink
 }
 
-# Aliases
-Set-Alias -Name vim -Value nvim
+function vim { # nvim
+  if ($args) {
+    & nvim --headless @args -c qall
+    if ($LASTEXITCODE -ne 0) { return }
+  }
 
+  while ($true) {
+    nvim @args
+    if ($LASTEXITCODE -eq 0) { break }
+    Write-Host "Restarting Neovim..." -ForegroundColor Yellow
+  }
+}
+
+# Aliases
 Set-Alias -Name lzg -Value lazygit
 
 function Get-GitDifftool($file){git difftool $file} # Get: git difftool arg1, arg2, ...
