@@ -38,16 +38,17 @@ Invoke-Expression (&starship init powershell)
 
 # Function
 if ($IsWindows) {
-  function trash {
-    param(
-      [Parameter(Mandatory=$true)]
-      [string]$path
-    )
-
+  function trash { # remove items safely
     $shell = New-Object -ComObject Shell.Application
-    $file = $shell.Namespace((Get-Item $path).DirectoryName).ParseName((Get-Item $path).Name)
     $recycleBin = $shell.Namespace(10)
-    $recycleBin.MoveHere($file, 0)
+
+    foreach ($path in $args) {
+      if (Test-Path $path) {
+        $item = Get-Item $path
+        $file = $shell.Namespace($item.DirectoryName).ParseName($item.Name)
+        $recycleBin.MoveHere($file, 0)
+      }
+    }
   }
 
   function Set-Symlink { # Set: symlink
