@@ -82,7 +82,7 @@ function vim { # nvim
 # Aliases
 Set-Alias -Name lzg -Value lazygit
 
-function Get-GitDifftool($file){git difftool $file} # Get: git difftool arg1, arg2, ...
+function Get-GitDifftool{& git difftool $args}
 Set-Alias -Name gdt -Value Get-GitDifftool
 
 function Get-GitStatus{& git status $args}
