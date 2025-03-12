@@ -27,22 +27,24 @@ vim.keymap.set("n", "sk", "<c-w>k", opts)
 vim.keymap.set("n", "sl", "<c-w>l", opts)
 vim.keymap.set("n", "sw", "<c-w>w", opts)
 
--- wt
-vim.keymap.set("n", "<Leader>wt",
-  function()
-    vim.cmd([[!wt -w 0 nt --title vim -d ]] .. vim.fn.expand('%:p:h'))
-  end, opts)
+if vim.fn.has('win32') == 1 then
+  -- wt
+  vim.keymap.set("n", "<Leader>wt",
+    function()
+      vim.cmd([[!wt -w 0 nt --title vim -d ]] .. vim.fn.expand('%:p:h'))
+    end, opts)
 
-vim.keymap.set("n", "<F7>",
-  function()
-    vim.cmd([[!wt -w 0 sp -H --title vim -d ]] .. vim.fn.expand('%:p:h'))
-  end, opts)
+  vim.keymap.set("n", "<F7>",
+    function()
+      vim.cmd([[!wt -w 0 sp -H --title vim -d ]] .. vim.fn.expand('%:p:h'))
+    end, opts)
 
--- lazygit
-vim.keymap.set("n", "<Leader>gg",
-  function()
-    vim.cmd([[!wt -w 0 nt -p PowerShell -d ]] .. vim.fn.expand('%:p:h') .. [[ lazygit]])
-  end, opts)
+  -- lazygit
+  vim.keymap.set("n", "<Leader>gg",
+    function()
+      vim.cmd([[!wt -w 0 nt -p PowerShell -d ]] .. vim.fn.expand('%:p:h') .. [[ lazygit]])
+    end, opts)
+end
 
 -- term
 vim.keymap.set("t", "<a-s-w>", "<c-\\><c-n>")
