@@ -16,9 +16,7 @@ return {
       },
     },
     mappings = {
-      apply = '',
-      -- resets hunk
-      reset = 'gH', -- gHgh, gH_
+      apply = 'gA',
     },
   }
 }
