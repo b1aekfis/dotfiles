@@ -79,6 +79,11 @@ function vim { # nvim
   }
 }
 
+# ZO
+$env:_ZO_FZF_OPTS=$env:FZF_DEFAULT_OPTS
+Invoke-Expression (& { (zoxide init powershell --cmd j | Out-String) })
+function jr { zoxide remove $(zoxide query -l | fzf) }
+
 # Aliases
 Set-Alias -Name lzg -Value lazygit
 
