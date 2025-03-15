@@ -24,6 +24,12 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     return {
+      view = {
+        entries = {
+          name = 'custom',
+          selection_order = 'near_cursor'
+        },
+      },
       completion = {
         completeopt = 'menu,menuone,noinsert',
       },
