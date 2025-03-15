@@ -29,11 +29,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
--- User highlight groups
+-- user highlight groups
 vim.cmd([[hi YzInclineNormalNC guibg=#000000 guifg=#a7c080 gui=italic]])
 vim.cmd([[hi YzInclineNormal guibg=#a7c080 guifg=#1e2326]])
 
--- update highlight (Vim groups)
+-- update highlight groups
 vim.cmd([[hi Normal guibg=none ctermbg=none]])
 vim.cmd([[hi NormalNC guibg=none ctermbg=none]])
 vim.cmd([[hi EndOfBuffer guibg=none ctermbg=none]])
@@ -42,5 +42,5 @@ vim.cmd([[hi FloatBorder guibg=none]])
 vim.cmd([[hi PmenuSel guibg=#000000 guifg=#f2f2f2]])
 vim.cmd([[hi Pmenu guibg=#00121a]])
 
--- update highlight (Plugin groups)
+-- update plugin highlight groups
 vim.cmd([[hi link LazyNormal Normal]])
