@@ -35,11 +35,6 @@ return {
         ["--info"] = false,
         ["--style"] = "minimal",
       },
-      files = {
-        hls = {
-          border = "FloatBorder",
-        },
-      },
       git = {
         files = {
           cmd = "git ls-files --exclude-standard --cached --others"
@@ -61,6 +56,10 @@ return {
         },
         row = 0.5,
         height = 0.7,
+      },
+      hls = {
+        border = "FloatBorder",
+        preview_border = "FloatBorder"
       },
     }
   end
