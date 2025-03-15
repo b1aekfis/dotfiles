@@ -101,6 +101,7 @@ return {
           -- 'searchcount',
           "'['..'%l:%c'..']'",
           'progress',
+          'fileformat',
         },
         lualine_z = {
           "os.date('%I:%M %p')",
