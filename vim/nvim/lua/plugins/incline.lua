@@ -9,14 +9,6 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons", },
   opts = {
     window = {
-      winhighlight = {
-        active = {
-          Normal = 'YzInclineNormal',
-        },
-        inactive = {
-          Normal = 'YzInclineNormalNC',
-        },
-      },
       padding = 0,
       margin = { vertical = 2, horizontal = 1 },
     },
