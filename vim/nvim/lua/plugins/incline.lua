@@ -14,8 +14,11 @@ return {
     },
     hide = { cursorline = true },
     render = function(props)
-      -- ft_icon + filename
       local devicons = require 'nvim-web-devicons'
+      local helpers = require 'incline.helpers'
+      local colorist = require 'util.color'
+
+      -- ft_icon + filename
       local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
       if filename == '' then
         filename = '[No Name]'
@@ -27,7 +30,18 @@ return {
       local smr = vim.b.minidiff_summary
       local add_smr = smr and smr.add and smr.add > 0 and '  ' .. smr.add or ''
       local del_smr = smr and smr.delete and smr.delete > 0 and '  ' .. smr.delete or ''
-      local mod_smr = smr and smr.change and smr.change > 0 and '  ' .. smr.change or ''
+      local chg_smr = smr and smr.change and smr.change > 0 and '  ' .. smr.change or ''
+
+      local hlcolor = colorist.hlcolor
+      local add_fg = hlcolor('MiniDiffSignAdd', 'fg') or hlcolor('Added', 'fg') or hlcolor('diffAdded', 'fg')
+      local chg_fg = hlcolor('MiniDiffSignChange', 'fg') or hlcolor('Changed', 'fg') or hlcolor('diffChanged', 'fg')
+      local del_fg = hlcolor('MiniDiffSignDelete', 'fg') or hlcolor('Removed', 'fg') or hlcolor('diffRemoved', 'fg')
+
+      --[[
+      Colors in the same color scheme usually have no significant difference in relative luminance values. In that case, least_fake is useful when these values are close to the threshold and fall on both sides of it.
+      ]]
+      local least_fake = colorist.extremum_fake_brightness_score({ add_fg, chg_fg, del_fg })
+      local smr_bg = helpers.contrast_color(least_fake) -- threshold = 0.179
 
       -- searchcount
       local scter = vim.fn.searchcount { maxcount = 999 }
@@ -35,11 +49,11 @@ return {
 
       return {
         props.focused and {
-          { add_smr, guifg = '#a7c080', },
-          { mod_smr, guifg = '#7fbbb3', },
-          { del_smr, guifg = '#e67e80', },
-          add_smr == '' and mod_smr == '' and del_smr == '' and '' or ' ',
-          guibg = '#000000',
+          { add_smr, guifg = add_fg },
+          { chg_smr, guifg = chg_fg },
+          { del_smr, guifg = del_fg },
+          add_smr == '' and chg_smr == '' and del_smr == '' and '' or ' ',
+          guibg = smr_bg,
         } or '',
 
         ' ',
@@ -47,8 +61,8 @@ return {
         filename, modified and { ' ', '[M]' } or '',
         props.focused and
         (
-        vim.v.hlsearch == 0 and '' or
-        ((scter.total == 0 or scter.total == nil) and '' or { ' ', searchcount})
+          vim.v.hlsearch == 0 and '' or
+          ((scter.total == 0 or scter.total == nil) and '' or { ' ', searchcount })
         )
         or '',
         ' ',
