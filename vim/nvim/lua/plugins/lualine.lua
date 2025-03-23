@@ -4,22 +4,19 @@
 -- ----------
 return {
   "nvim-lualine/lualine.nvim",
-  event = "BufReadPre",
+  event = "VeryLazy",
   opts = function()
-    local theme = require 'lualine.themes.everforest'
-    theme.normal.a.gui = ''
-    theme.insert.a.gui = ''
-    theme.visual.a.gui = ''
-    theme.replace.a.gui = ''
-    theme.command.a.gui = ''
-    theme.terminal.a.gui = ''
-    theme.terminal.a.bg = '#7fbbb3'
-    theme.normal.b.fg = '#000000'
-    theme.normal.b.bg = '#56635f'
-
     local colors = {
       diagnoster = '#7fffb3'
     }
+
+    local theme = require('user.lualine.themes.custom.' .. _G.CURRENT_COLORSCHEME)
+
+    for mode, sections in pairs(theme) do
+      if mode ~= 'inactive' then
+        sections.c = {}
+      end
+    end
 
     return {
       options = {
@@ -117,8 +114,8 @@ return {
             end,
             max_length = vim.o.columns,
             buffers_color = {
-              active = 'lualine_a_terminal',
-              inactive = 'lualine_b_terminal',
+              active = 'lualine_a_insert',
+              inactive = 'lualine_b_normal',
             },
           },
         },

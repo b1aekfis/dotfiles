@@ -69,7 +69,6 @@ return {
     -- presets
     presets = {
       long_message_to_split = true,
-      lsp_doc_border = true,
     },
     -- mes
     messages = {
@@ -81,6 +80,7 @@ return {
     lsp = {
       progress = { enabled = false, },
       signature = { enabled = false, },
+      hover = { enabled = false, },
     },
   },
 }
