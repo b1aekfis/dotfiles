@@ -59,8 +59,8 @@
                 "face": "Hack Nerd Font",
                 "weight": "medium"
             },
-            "intenseTextStyle": "bold",
-            "opacity": 28,
+            "intenseTextStyle": "none",
+            "opacity": 68,
             "padding": "0",
             "scrollbarState": "hidden",
             "useAcrylic": true
@@ -77,17 +77,12 @@
                     "builtinGlyphs": true
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "intenseTextStyle": "none",
                 "name": "PowerShell",
-                "opacity": 68,
                 "source": "Windows.Terminal.PowershellCore",
                 "tabTitle": "ps"
             },
             {
                 "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
-                "font": {
-                    "weight": "normal"
-                },
                 "guid": "{0357a840-b219-4fa9-b65c-e06e3a180aa8}",
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash",
