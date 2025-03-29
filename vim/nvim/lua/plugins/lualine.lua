@@ -6,6 +6,16 @@ return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   opts = function()
+    local git = require 'util.git'
+
+    vim.api.nvim_create_autocmd("BufEnter", {
+      pattern = "*.*",
+      callback = function()
+        local branch_name = git.get_branch_name()
+        vim.b.branch = branch_name ~= "" and " " .. branch_name or ""
+      end
+    })
+
     local colors = {
       diagnoster = '#7fffb3'
     }
