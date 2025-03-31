@@ -74,7 +74,8 @@
             {
                 "adjustIndistinguishableColors": "never",
                 "font": {
-                    "builtinGlyphs": true
+                    "builtinGlyphs": true,
+                    "face": "PlemolJP Console NF"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "name": "PowerShell",
