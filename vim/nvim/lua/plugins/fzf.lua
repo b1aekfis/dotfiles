@@ -17,21 +17,36 @@ return {
 
     local actions = require("fzf-lua").actions
 
+    local colors = {
+      pointer = "#d7005f",
+      spinner = "#af5fff",
+      info = "#afaf87",
+      prompt = "#5f87af",
+      hl = "#859900"
+    }
+
+    vim.api.nvim_set_hl(0, "FzfLuaHeaderText", { fg = colors.prompt })
+
     return {
       defaults = {
         formatter = 'path.filename_first',
         file_icons = false,
       },
       fzf_colors = {
-        ["pointer"] = "#d7005f",
-        ["spinner"] = "#af5fff",
-        ["info"] = "#afaf87",
-        ["marker"] = "#e67e80",
-        ["prompt"] = "#5f87af",
+        true,
+        ["hl"] = colors.hl,
+        ["hl+"] = colors.hl,
+        ["bg+"] = "-1",
+        ["pointer"] = colors.pointer,
+        ["spinner"] = colors.spinner,
+        ["info"] = colors.info,
+        ["marker"] = colors.pointer,
+        ["prompt"] = colors.prompt,
         ["gutter"] = "-1",
       },
       fzf_opts = {
         ["--pointer"] = ">",
+        ["--marker"] = ">",
         ["--info"] = false,
         ["--style"] = "minimal",
       },
