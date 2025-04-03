@@ -13,10 +13,11 @@ vim.keymap.set("n", "QF", function() vim.diagnostic.setqflist() end, opts)
 -- tabline
 vim.o.showtabline = 0
 _G.hide_tabline = true
-vim.keymap.set("n", "<Leader>B",function()
-  _G.hide_tabline = not _G.hide_tabline
-  vim.o.showtabline = _G.hide_tabline and 0 or 2
-end, opts)
+vim.keymap.set("n", "<Leader>B",
+  function()
+    _G.hide_tabline = not _G.hide_tabline
+    vim.o.showtabline = _G.hide_tabline and 0 or 2
+  end, opts)
 
 -- Lazy
 vim.keymap.set("n", "<Leader>lz", "<Cmd>Lazy<CR>")
