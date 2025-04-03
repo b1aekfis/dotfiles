@@ -1,9 +1,25 @@
 local opts = { noremap = true, silent = true }
+local homedir = vim.uv.os_homedir():gsub("\\", "/")
 
 -- session
-local src = " ~/ssv/"
-vim.keymap.set("n", "SS", ":mkse!" .. src)
-vim.keymap.set("n", "SR", ":source" .. src)
+local function input_sessions_path()
+  local state_home = os.getenv("XDG_STATE_HOME")
+  state_home = state_home and state_home:gsub("\\", "/") or (homedir .. "/.local/state")
+  local default_path = state_home .. "/nvim/sessions/"
+  local input_path = vim.fn.input("Press 󱊷  to use default sessions path (" ..
+  default_path:gsub("^" .. homedir, "~") .. ")\nor   ", "~/", "dir")
+  input_path = input_path ~= "" and input_path:gsub("\\", "/") or input_path
+  return input_path ~= "" and input_path:gsub("/$", "") .. "/" or default_path
+end
+
+vim.keymap.set("n", "SS",
+  function()
+    local path = input_sessions_path()
+    local cmd = vim.fn.input("'s' to source session, 'S' to save session", "s")
+    if cmd ~= 's' and cmd ~= 'S' then return end
+    cmd = cmd == 's' and "source" or "mkse!"
+    vim.api.nvim_input(":" .. cmd .. " " .. (path:gsub("^" .. homedir, "~")))
+  end)
 
 -- diagnostic
 vim.keymap.set("n", "<c-j>", function() vim.diagnostic.goto_next() end, opts)
