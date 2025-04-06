@@ -24,7 +24,8 @@ vim.keymap.set("n", "SS",
 -- diagnostic
 vim.keymap.set("n", "<c-j>", function() vim.diagnostic.goto_next() end, opts)
 vim.keymap.set("n", "<c-k>", function() vim.diagnostic.goto_prev() end, opts)
-vim.keymap.set("n", "QF", function() vim.diagnostic.setqflist() end, opts)
+vim.keymap.set("n", "QF", function() vim.diagnostic.setqflist(--[[all buffers]]) end, opts)
+vim.keymap.set("n", "Qf", function() vim.diagnostic.setloclist(--[[cur buffer]]) end, opts)
 
 -- tabline
 vim.o.showtabline = 0
