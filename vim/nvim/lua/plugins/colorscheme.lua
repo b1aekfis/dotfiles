@@ -16,6 +16,7 @@ return {
       vim.cmd([[hi PmenuSel guibg=#000000 guifg=#f2f2f2]])
       vim.cmd([[hi NormalFloat guibg=#000000 blend=28]])
       vim.cmd([[hi FloatBorder guibg=none]])
+      vim.cmd([[hi QuickFixLine guibg=none guifg=none]])
       vim.cmd([[hi InclineNormalNC guibg=#000000 guifg=#a7c080 gui=italic]])
       vim.cmd([[hi InclineNormal guibg=#a7c080 guifg=#1e2326]])
       vim.cmd([[hi link LazyNormal Normal]])
@@ -44,6 +45,7 @@ return {
           hls.PmenuThumb = { bg = colors.violet }
           hls.LineNr = { fg = colors.base01 }
           hls.StatusLine = { bg = colors.none }
+          hls.QuickFixLine = {}
           hls.InclineNormalNC = { bg = '#000000', fg = colors.green, italic = true }
           hls.InclineNormal = { bg = colors.green, fg = '#1e2326' }
           hls.LazyNormal = { link='Normal' }
