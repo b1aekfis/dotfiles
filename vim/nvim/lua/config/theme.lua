@@ -38,6 +38,11 @@ do
   vim.api.nvim_create_user_command('Theme', function(opts)
     local new_theme = opts.args
 
+    if new_theme == _G.CURRENT_COLORSCHEME then
+      vim.notify(new_theme .. " is already the current theme!", vim.log.levels.INFO)
+      return
+    end
+
     if not is_valid_theme(new_theme) then
       vim.notify("Theme '" .. new_theme .. "' is not available!", vim.log.levels.ERROR)
       return
