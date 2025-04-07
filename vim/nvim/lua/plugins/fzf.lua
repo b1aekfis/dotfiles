@@ -1,6 +1,5 @@
 return {
   "ibhagwan/fzf-lua",
-  event = { "CmdlineEnter" },
   keys = {
     {
       "<Leader>ff", "<Cmd>FzfLua files<CR>", silent = true
