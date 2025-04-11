@@ -40,8 +40,8 @@ vim.keymap.set("n", "<Leader>B",
 vim.keymap.set("n", "<Leader>lz", "<Cmd>Lazy<CR>")
 
 -- buffer
-vim.keymap.set("n", "[b", "<Cmd>bp<CR>", opts)
-vim.keymap.set("n", "]b", "<Cmd>bn<CR>", opts)
+vim.keymap.set("n", "<c-p>", "<Cmd>bp<CR>", opts)
+vim.keymap.set("n", "<c-n>", "<Cmd>bn<CR>", opts)
 
 -- window
 vim.keymap.set("n", "sh", "<c-w>h", opts)
