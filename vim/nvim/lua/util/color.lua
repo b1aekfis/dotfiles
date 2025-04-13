@@ -4,8 +4,8 @@ local helpers = require 'incline.helpers'
 
 ---Get color from a highlight group.
 ---@param group string highlight group name
----@param prop string string 'fg'|'bg'|'sp'
----@return string|nil -- hex color in the format '#rrggbb' or nil
+---@param prop string is 'fg'|'bg'|'sp'
+---@return string|nil -- hex color in the format '#rrggbb' (lowercase) or nil
 function M.hlcolor(group, prop)
   local color = vim.api.nvim_get_hl(0, { name = group, link = false })[prop]
   return (type(color)) == 'number' and string.format('#%06x', color) or nil
