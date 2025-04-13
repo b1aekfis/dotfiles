@@ -15,7 +15,7 @@ end
 vim.keymap.set("n", "SS",
   function()
     local path = input_sessions_path()
-    local cmd = vim.fn.input("'s' to source session, 'S' to save session", "s")
+    local cmd = vim.fn.input("'s' to source session, 'S' to save session: ", "s")
     if cmd ~= 's' and cmd ~= 'S' then return end
     cmd = cmd == 's' and "source" or "mkse!"
     vim.api.nvim_input(":" .. cmd .. " " .. (path:gsub("^" .. homedir, "~")))
