@@ -1,7 +1,5 @@
 local M = {}
 
-local helpers = require 'incline.helpers'
-
 ---Get color from a highlight group.
 ---@param group string highlight group name
 ---@param prop string is 'fg'|'bg'|'sp'
@@ -15,22 +13,22 @@ end
 ---@param hexcolor string hex color in the format '#rrggbb'
 ---@return number -- a value in the range 0 to 1
 function M.perceived_brightness(hexcolor)
-  local rgb = helpers.hex_to_rgb(hexcolor)
+  local rgb = M.hex_to_rgb(hexcolor)
   return math.sqrt(0.299 * rgb.r ^ 2 + 0.587 * rgb.g ^ 2 + 0.114 * rgb.b ^ 2)
 end
 
----Calculate the fake brightness score based on HSP and (sRGB / WCAG / ITU-R BT.709) models.
+---Calculate the fake brightness score based on the difference between HSP and WCAG luminance.
 ---@param hexcolor string hex color in the format '#rrggbb'
 ---@return number score a value in the range 0 to 1
 function M.fake_brightness_score(hexcolor)
-  local r = helpers.relative_luminance(hexcolor)
+  local r = M.relative_luminance(hexcolor)
   local p = M.perceived_brightness(hexcolor)
   local score = math.abs(p - r)
   return score
 end
 
----Calculate the fake brightness score based on HSP and (sRGB / WCAG / ITU-R BT.709) models.
 ---Picks the color with the least or most fake brightness score.
+---The fake brightness score is based on the difference between HSP and WCAG luminance.
 ---@param mode string optional: 'min'|'max', default: 'min'
 ---@param colors string[] array of hex colors in the format '#rrggbb'
 ---@return string|nil -- hex color in the format '#rrggbb' or nil if array is nil
@@ -53,6 +51,33 @@ function M.extremum_fake_brightness_score(mode, colors)
     end
   end
   return e_fake
+end
+
+---@param hexcolor string is '#rrggbb'
+---@return table -- RGB color table with fields r, g, b, each in the range 0 to 1
+function M.hex_to_rgb(hexcolor)
+  hexcolor = hexcolor:gsub("#", "")
+  local r = tonumber(hexcolor:sub(1, 2), 16) / 255
+  local g = tonumber(hexcolor:sub(3, 4), 16) / 255
+  local b = tonumber(hexcolor:sub(5, 6), 16) / 255
+  return { r = r, g = g, b = b }
+end
+
+---Calculate the relative luminance of a color (WCAG).
+---@param input_color string|table is '#rrggbb' or RGB color table with fields r, g, b, each in the range 0 to 1
+---@return number
+function M.relative_luminance(input_color)
+  local function srgb_to_linear(c)
+    if c <= 0.03928 then
+      return c / 12.92
+    else
+      return ((c + 0.055) / 1.055) ^ 2.4
+    end
+  end
+
+  local rgb = type(input_color) == 'string' and M.hex_to_rgb(input_color) or input_color
+  local r, g, b = srgb_to_linear(rgb.r), srgb_to_linear(rgb.g), srgb_to_linear(rgb.b)
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b
 end
 
 return M
