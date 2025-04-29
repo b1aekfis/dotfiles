@@ -88,4 +88,54 @@ function M.stop_inspect_line(bufnr, lnum)
   vim.api.nvim_buf_clear_namespace(bufnr, inspect_ns, lnum - 1, lnum)
 end
 
+---Inspect the color codes linearly in the buffer.
+---Available: HEX (#rrggbb | #rgb), RGB, HSL.
+---@param bufnr integer|nil The buffer number, or if 0|nil, uses the current buffer
+function M.linear_inspect(bufnr)
+  vim.api.nvim_buf_clear_namespace(bufnr or 0, inspect_ns, 0, -1)
+
+  local lines = vim.api.nvim_buf_get_lines(bufnr or 0, 0, -1, false)
+
+  for lnum, line in ipairs(lines) do
+    for col, m in line:gmatch("()(#%x%x%x%x?%x?%x?)") do
+      local len = #m
+      if len == 4 or len == 7 then -- #rgb or #rrggbb
+        M.inspect({
+          bufnr = bufnr,
+          code = m,
+          lnum = lnum,
+          col = col,
+          len = len
+        })
+      end
+    end
+
+    for col, m in line:gmatch("()(hsl%(%s*%d+%s*,%s*%d+%%%s*,%s*%d+%%%s*%))") do
+      M.inspect({
+        bufnr = bufnr,
+        code = m,
+        lnum = lnum,
+        col = col,
+        len = #m
+      })
+    end
+
+    for col, m in line:gmatch("()(rgb%(%s*%d+%s*,%s*%d+%s*,%s*%d+%s*%))") do
+      M.inspect({
+        bufnr = bufnr,
+        code = m,
+        lnum = lnum,
+        col = col,
+        len = #m
+      })
+    end
+  end
+end
+
+---Stop inspecting color codes in the buffer.
+---@param bufnr integer|nil The buffer number, or if 0|nil, uses the current buffer
+function M.stop_linear_inspect(bufnr)
+  vim.api.nvim_buf_clear_namespace(bufnr or 0, inspect_ns, 0, -1)
+end
+
 return M
