@@ -38,7 +38,8 @@ return {
       local del_fg = hlcolor('MiniDiffSignDelete', 'fg') or hlcolor('Removed', 'fg') or hlcolor('diffRemoved', 'fg')
 
       --[[
-      Colors in the same color scheme usually have no significant difference in relative luminance values. In that case, least_fake is useful when these values are close to the threshold and fall on both sides of it.
+      Colors in the same color scheme usually have no significant difference in relative luminance values.
+      In that case, least_fake is useful when these values are close to the threshold and fall on both sides of it.
       ]]
       local least_fake = colorist.extremum_fake_brightness_score({ add_fg, chg_fg, del_fg })
       local smr_bg = helpers.contrast_color(least_fake) -- threshold = 0.179
