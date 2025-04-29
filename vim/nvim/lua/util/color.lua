@@ -80,4 +80,76 @@ function M.relative_luminance(input_color)
   return 0.2126 * r + 0.7152 * g + 0.0722 * b
 end
 
+---@param hexcolor string is '#rgb'|'#rrggbb'
+---@return string hexcolor is '#rrggbb'
+function M.expand_hexcolor(hexcolor)
+  if #hexcolor == 4 then
+    hexcolor = '#' .. table.concat({
+      hexcolor:sub(2, 2):rep(2),
+      hexcolor:sub(3, 3):rep(2),
+      hexcolor:sub(4, 4):rep(2)
+    })
+  end
+  return hexcolor
+end
+
+---@param h number Hue in degrees (0–360)
+---@param s number Saturation as a percentage (0–100)
+---@param l number Lightness as a percentage (0–100)
+---@return string -- is '#rrggbb' (lowercase)
+function M.hsl_to_hex(h, s, l)
+  s = s / 100
+  l = l / 100
+
+  local function hue_to_rgb(p, q, t)
+    if t < 0 then t = t + 1 end
+    if t > 1 then t = t - 1 end
+    if t < 1 / 6 then return p + (q - p) * 6 * t end
+    if t < 1 / 2 then return q end
+    if t < 2 / 3 then return p + (q - p) * (2 / 3 - t) * 6 end
+    return p
+  end
+
+  local r, g, b
+  if s == 0 then
+    r, g, b = l, l, l
+  else
+    local q = l < 0.5 and l * (1 + s) or l + s - l * s
+    local p = 2 * l - q
+    r = hue_to_rgb(p, q, h / 360 + 1 / 3)
+    g = hue_to_rgb(p, q, h / 360)
+    b = hue_to_rgb(p, q, h / 360 - 1 / 3)
+  end
+
+  return string.format("#%02x%02x%02x",
+    math.floor(r * 255),
+    math.floor(g * 255),
+    math.floor(b * 255))
+end
+
+---@param r number Red component (0–255)
+---@param g number Green component (0–255)
+---@param b number Blue component (0–255)
+---@return string -- is '#rrggbb' (lowercase)
+function M.rgb_to_hex(r, g, b)
+  r = math.min(255, math.max(0, r))
+  g = math.min(255, math.max(0, g))
+  b = math.min(255, math.max(0, b))
+  return string.format("#%02x%02x%02x", r, g, b)
+end
+
+---Check if the string is a valid color code (HEX, RGB, HSL).
+---@param str string
+---@return boolean
+function M.is_color_code(str)
+  if
+    str:match("^#%x%x%x%x%x%x$")
+    or str:match("^#%x%x%x$")
+    or str:match("^rgb%(%s*%d+%s*,%s*%d+%s*,%s*%d+%s*%)$")
+    or str:match("^hsl%(%s*%d+%s*,%s*%d+%%%s*,%s*%d+%%%s*%)$")
+    then return true
+  end
+  return false
+end
+
 return M
