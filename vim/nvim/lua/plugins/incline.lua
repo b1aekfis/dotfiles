@@ -16,7 +16,7 @@ return {
     render = function(props)
       local devicons = require 'nvim-web-devicons'
       local helpers = require 'incline.helpers'
-      local colorist = require 'util.color'
+      local color = require 'util.color'
 
       -- ft_icon + filename
       local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
@@ -32,7 +32,7 @@ return {
       local del_smr = smr and smr.delete and smr.delete > 0 and '  ' .. smr.delete or ''
       local chg_smr = smr and smr.change and smr.change > 0 and '  ' .. smr.change or ''
 
-      local hlcolor = colorist.hlcolor
+      local hlcolor = color.hlcolor
       local add_fg = hlcolor('MiniDiffSignAdd', 'fg') or hlcolor('Added', 'fg') or hlcolor('diffAdded', 'fg')
       local chg_fg = hlcolor('MiniDiffSignChange', 'fg') or hlcolor('Changed', 'fg') or hlcolor('diffChanged', 'fg')
       local del_fg = hlcolor('MiniDiffSignDelete', 'fg') or hlcolor('Removed', 'fg') or hlcolor('diffRemoved', 'fg')
@@ -41,7 +41,7 @@ return {
       Colors in the same color scheme usually have no significant difference in relative luminance values.
       In that case, least_fake is useful when these values are close to the threshold and fall on both sides of it.
       ]]
-      local least_fake = colorist.extremum_fake_brightness_score({ add_fg, chg_fg, del_fg })
+      local least_fake = color.extremum_fake_brightness_score({ add_fg, chg_fg, del_fg })
       local smr_bg = helpers.contrast_color(least_fake) -- threshold = 0.179
 
       -- searchcount
