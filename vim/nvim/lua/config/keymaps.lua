@@ -101,7 +101,3 @@ vim.keymap.set("n", "<c-left>", "<c-w><")
 vim.keymap.set("n", "<c-right>", "<c-w>>")
 vim.keymap.set("n", "<c-up>", "<c-w>+")
 vim.keymap.set("n", "<c-down>", "<c-w>-")
-
--- zz
-vim.keymap.set({ "n", "v" }, "zj", "Lzz")
-vim.keymap.set({ "n", "v" }, "zk", "Hzz")
