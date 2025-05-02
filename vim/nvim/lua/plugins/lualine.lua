@@ -20,7 +20,7 @@ return {
       diagnoster = '#7fffb3'
     }
 
-    local theme = require('user.lualine.themes.custom.' .. _G.CURRENT_COLORSCHEME)
+    local theme = require('ui.lualine.themes.custom.' .. _G.CURRENT_COLORSCHEME)
 
     for mode, sections in pairs(theme) do
       if mode ~= 'inactive' then
