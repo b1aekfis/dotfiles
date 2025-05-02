@@ -62,6 +62,10 @@ vim.keymap.set("v", "<Leader>cs",
 
 -- Lazy
 vim.keymap.set("n", "<Leader>lz", "<Cmd>Lazy<CR>")
+  
+-- page
+vim.keymap.set({ "n", "v" }, "<m-j>", "<c-d>")
+vim.keymap.set({ "n", "v" }, "<m-k>", "<c-u>")
 
 -- buffer
 vim.keymap.set("n", "<c-p>", "<Cmd>bp<CR>", opts)
