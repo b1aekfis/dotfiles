@@ -14,7 +14,7 @@ vim.keymap.set("n", "Qf", function() vim.diagnostic.setloclist(--[[cur buffer]])
 -- toggle tabline
 vim.o.showtabline = 0
 _G.hide_tabline = true
-vim.keymap.set("n", "<Leader>B", function()
+vim.keymap.set("n", "<Leader>T", function()
   _G.hide_tabline = not _G.hide_tabline
   vim.o.showtabline = _G.hide_tabline and 0 or 2
 end)
