@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaults
 [
     {
         "key": "ctrl+alt+m",
@@ -12,5 +11,75 @@
         "key": "backspace",
         "command": "-markdown.extension.onBackspaceKey",
         "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadonly && !markdown.extension.editor.cursor.inFencedCodeBlock && !markdown.extension.editor.cursor.inMathEnv && !suggestWidgetVisible && vim.mode != 'CommandlineInProgress' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'EasyMotionMode' && vim.mode != 'Normal' && vim.mode != 'Replace' && vim.mode != 'SearchInProgressMode' && vim.mode != 'SurroundInputMode' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine' && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "alt+j",
+        "command": "cursorPageDown",
+        "when": "editorTextFocus && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
+    {
+        "key": "alt+k",
+        "command": "cursorPageUp",
+        "when": "editorTextFocus && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "\\ f",
+        "command": "workbench.action.quickOpen",
+        "when": "(editorTextFocus && neovim.mode == 'normal' && editorLangId not in 'neovim.editorLangIdExclusions') || (explorerViewletFocus && !inputFocus)"
+    },
+    {
+        "key": "s k",
+        "command": "workbench.action.navigateUp",
+        "when": "(editorTextFocus && neovim.mode == 'normal' && editorLangId not in 'neovim.editorLangIdExclusions') || (explorerViewletFocus && !inputFocus)"
+    },
+    {
+        "key": "s j",
+        "command": "workbench.action.navigateDown",
+        "when": "(editorTextFocus && neovim.mode == 'normal' && editorLangId not in 'neovim.editorLangIdExclusions') || (explorerViewletFocus && !inputFocus)"
+    },
+    {
+        "key": "s h",
+        "command": "workbench.action.navigateLeft",
+        "when": "(editorTextFocus && neovim.mode == 'normal' && editorLangId not in 'neovim.editorLangIdExclusions') || (explorerViewletFocus && !inputFocus)"
+    },
+    {
+        "key": "s l",
+        "command": "workbench.action.navigateRight",
+        "when": "(editorTextFocus && neovim.mode == 'normal' && editorLangId not in 'neovim.editorLangIdExclusions') || (explorerViewletFocus && !inputFocus)"
+    },
+    {
+        "key": "s h",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "((activeWebviewPanelId == 'markdown.preview' || activeCustomEditorId == 'vscode.markdown.preview.editor') && !inputFocus)"
+    },
+    {
+        "key": "s l",
+        "command": "workbench.action.focusNextGroup",
+        "when": "((activeWebviewPanelId == 'markdown.preview' || activeCustomEditorId == 'vscode.markdown.preview.editor') && !inputFocus)"
+    },
+    {
+        "key": "s s",
+        "command": "markdown.showSource",
+        "when": "((activeWebviewPanelId == 'markdown.preview' || activeCustomEditorId == 'vscode.markdown.preview.editor') && !inputFocus)"
     }
 ]

@@ -1,0 +1,4 @@
+/* titlebar */
+.monaco-workbench .part.titlebar>.titlebar-container>.titlebar-left {
+    opacity: 0;
+}
