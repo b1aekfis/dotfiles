@@ -12,6 +12,6 @@ format = '[$symbol$branch(:$remote_branch)]($style) '
 style = 'fg:#a7c080'
 
 [character]
-success_symbol = '[❯](#dbbc7f) '
-error_symbol = '[](#e67e80) '
-vimcmd_symbol = '[❮](#dbbc7f) '
+success_symbol = '[❯](#bafb00) '
+error_symbol = '[](#c51b1a) '
+vimcmd_symbol = '[❮](#bafb00) '
