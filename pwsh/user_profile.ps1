@@ -9,7 +9,9 @@ Import-Module (Join-Path $dotfilesRoot "modules/fzf_helper.psm1")
 $PSReadLineOptions = @{
   Colors = @{
     # default is InlinePrediction = "`e[97;2;3m"
-    InlinePrediction = "$($PSStyle.Foreground.FromRgb(0x707070))$($PSStyle.Italic)"
+    InlinePrediction = "$($PSStyle.Foreground.FromRgb(0x47503e))$($PSStyle.Italic)"
+    Command = "#648f90"
+    Parameter = "#648f90"
   }
   EditMode = "Vi"
   BellStyle = "None"

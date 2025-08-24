@@ -4,7 +4,7 @@ $env:FZF_DEFAULT_OPTS = "
   --height 40%
   --pointer '>'
   --marker '>'
-  --color 'spinner:#af5fff,marker:#d7005f,bg+:-1,hl:#859900,hl+:#859900'
+  --color 'spinner:#af5fff,marker:#d7005f,bg+:-1,hl:#859900,hl+:#859900,fg+:#9eaca0'
   --multi
   --bind 'F4:toggle-preview'
   --preview-window ':hidden'
