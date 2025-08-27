@@ -7,7 +7,7 @@
 
 - link:
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
-    ~/.config/alacritty/onehalf-dark-yz.toml: alacritty/onehalf-dark-yz.toml
+    ~/.config/alacritty/solarized-dark-yz.toml: alacritty/solarized-dark-yz.toml
     ~/Library/Application\ Support/lazygit/config.yml: lazygit/config.yml
     ~/Library/Preferences/clangd: ls/clangd
     ~/.config/powershell/Microsoft.PowerShell_profile.ps1: pwsh/user_profile.ps1
