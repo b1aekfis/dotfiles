@@ -1,0 +1,25 @@
+# Solarized Dark (yz)
+
+[colors.primary]
+background = "#031219"
+foreground = "#9eaca0"
+
+[colors.normal]
+black = "#002b38"
+red = "#d01b24"
+green = "#859900"
+yellow = "#a77807"
+blue = "#20a477"
+magenta = "#c51b1a"
+cyan = "#2aa198"
+white = "#9eaca0"
+
+[colors.bright]
+black = "#47503e"
+red = "#b73721"
+green = "#72dc05"
+yellow = "#535c70"
+blue = "#707a83"
+magenta = "#58abba"
+cyan = "#648f90"
+white = "#b7c2b8"
