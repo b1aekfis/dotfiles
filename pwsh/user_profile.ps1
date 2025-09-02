@@ -1,6 +1,22 @@
 # Env
 $env:VIRTUAL_ENV_DISABLE_PROMPT = 1
 
+# XDG
+if (-not $env:XDG_CONFIG_HOME) { $env:XDG_CONFIG_HOME = if ($IsWindows) { "$env:LOCALAPPDATA" } else { "$HOME/.config" } }
+if (-not $env:XDG_DATA_HOME)   { $env:XDG_DATA_HOME   = if ($IsWindows) { "$env:LOCALAPPDATA" } else { "$HOME/.local/share" } }
+if (-not $env:XDG_STATE_HOME)  { $env:XDG_STATE_HOME  = if ($IsWindows) { "$env:LOCALAPPDATA" } else { "$HOME/.local/state" } }
+if (-not $env:XDG_CACHE_HOME)  { $env:XDG_CACHE_HOME  = if ($IsWindows) { "$env:TEMP" } else { "$HOME/.cache" } }
+
+# PNPM_HOME
+if (-not $env:PNPM_HOME) { $env:PNPM_HOME = "$env:XDG_DATA_HOME/pnpm" }
+
+# PATH
+$sepP = $IsWindows ? ';' : ':'
+
+if ("$sepP$env:PATH$sepP" -notlike "*$sepP$env:PNPM_HOME$sepP*" ) {
+  $env:PATH = "$env:PNPM_HOME$sepP$env:PATH"
+}
+
 # Include
 $dotfilesRoot = Split-Path -Parent (Get-Item $MyInvocation.MyCommand.Path).Target
 Import-Module (Join-Path $dotfilesRoot "modules/fzf_helper.psm1")
