@@ -2,9 +2,7 @@ local M = {}
 
 function M.prompt()
   local homedir = vim.uv.os_homedir():gsub("\\", "/")
-  local state_home = os.getenv("XDG_STATE_HOME")
-  state_home = state_home and state_home:gsub("\\", "/") or (homedir .. "/.local/state")
-  local default_path = state_home .. "/nvim/sessions/"
+  local default_path = vim.fn.stdpath("state") .. "/"
   local input_path = vim.fn.input("Press 󱊷  to use default sessions path (" ..
   default_path:gsub("^" .. homedir, "~") .. ")\nor   ", "~/", "dir")
   input_path = input_path ~= "" and input_path:gsub("\\", "/") or input_path
