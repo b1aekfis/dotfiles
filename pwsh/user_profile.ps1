@@ -18,6 +18,8 @@ if ("$sepP$env:PATH$sepP" -notlike "*$sepP$env:PNPM_HOME$sepP*" ) {
 }
 
 # Include
+if (Test-Path ~/private_profile.ps1) { . ~/private_profile.ps1 }
+
 $dotfilesRoot = Split-Path -Parent (Get-Item $MyInvocation.MyCommand.Path).Target
 Import-Module (Join-Path $dotfilesRoot "modules/fzf_helper.psm1")
 
