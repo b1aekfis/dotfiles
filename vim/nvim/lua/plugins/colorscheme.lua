@@ -49,6 +49,7 @@ return {
           hls.InclineNormalNC = { bg = '#000000', fg = colors.green, italic = true }
           hls.InclineNormal = { bg = colors.green, fg = '#1e2326' }
           hls.LazyNormal = { link='Normal' }
+          hls.TabLineFill = { bg = colors.none }
 
           local pats = {
             "FzfLua", "MiniIndentscope"
