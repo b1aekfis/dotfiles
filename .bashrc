@@ -1,5 +1,8 @@
 bind 'set bell-style none'
 
+# Include
+test -f "$HOME/.bashrc.private" && source "$HOME/.bashrc.private"
+
 # Aliases
 alias gdt='git difftool'
 alias gs='git status'
