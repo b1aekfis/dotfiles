@@ -17,7 +17,7 @@ if ("$sepP$env:PATH$sepP" -notlike "*$sepP$env:PNPM_HOME$sepP*" ) {
   $env:PATH = "$env:PNPM_HOME$sepP$env:PATH"
 }
 
-# Include
+# Source
 if (Test-Path ~/private_profile.ps1) { . ~/private_profile.ps1 }
 
 $dotfilesRoot = Split-Path -Parent (Get-Item $MyInvocation.MyCommand.Path).Target
@@ -105,11 +105,6 @@ Invoke-Expression (& { (zoxide init powershell --cmd j | Out-String) })
 function jr { zoxide remove $(zoxide query -l | fzf) }
 
 # Aliases
-Set-Alias -Name lzg -Value lazygit
-
-function Get-GitDifftool{& git difftool $args}
-Set-Alias -Name gdt -Value Get-GitDifftool
-
 function Get-GitStatus{& git status $args}
 Set-Alias -Name gs -Value Get-GitStatus
 
@@ -121,15 +116,3 @@ Set-Alias -Name gc -Value Get-GitCommit -Force
 
 function Get-GitPush{& git push $args}
 Set-Alias -Name gp -Value Get-GitPush -Force
-
-function Get-GitLog{& git log $args}
-Set-Alias -Name gl -Value Get-GitLog -Force
-
-function Get-GitStash{& git stash $args}
-Set-Alias -Name gst -Value Get-GitStash
-
-function Get-GitFetch{& git fetch $args}
-Set-Alias -Name gf -Value Get-GitFetch
-
-function Get-GitMerge{& git merge $args}
-Set-Alias -Name gmg -Value Get-GitMerge
