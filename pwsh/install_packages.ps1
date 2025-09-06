@@ -68,7 +68,7 @@ function Install-Packages {
       "pip"      { pip install $PackageName }
       "brew"     { brew install $PackageName }
       "apt"      { sudo apt update && sudo apt install -y $PackageName }
-      "pacman"   { sudo pacman -Sy --noconfirm $PackageName }
+      "pacman"   { sudo pacman -Syu --noconfirm $PackageName }
       "pnpm"     { pnpm add -g $PackageName }
     }
 
