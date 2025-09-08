@@ -4,15 +4,13 @@ bind 'set bell-style none'
 test -f "$HOME/.bashrc.private" && source "$HOME/.bashrc.private"
 
 # Aliases
-alias gdt='git difftool'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
-alias gl='git log'
-alias gst='git stash'
-alias gf='git fetch'
-alias gmg='git merge'
 
 alias cls='clear'
 
