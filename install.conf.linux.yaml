@@ -6,8 +6,7 @@
 - clean: ["~"]
 
 - link:
-    ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
-    ~/.config/alacritty/solarized-dark-yz.toml: alacritty/solarized-dark-yz.toml
+    ~/.config/alacritty:
     ~/.config/lazygit/config.yml: lazygit/config.yml
     ~/.config/clangd: ls/clangd
     ~/.config/powershell/Microsoft.PowerShell_profile.ps1: pwsh/user_profile.ps1
