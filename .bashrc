@@ -1,6 +1,8 @@
 bind 'set bell-style none'
+bind 'TAB:menu-complete'
+bind '"\e[Z":menu-complete-backward'
 
-# Include
+# Source
 test -f "$HOME/.bashrc.private" && source "$HOME/.bashrc.private"
 
 # Aliases
@@ -28,3 +30,6 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+# Theme
+eval "$(starship init bash)"
