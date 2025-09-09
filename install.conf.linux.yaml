@@ -7,6 +7,7 @@
 
 - link:
     ~/.config/alacritty:
+    ~/.config/kitty:
     ~/.config/lazygit/config.yml: lazygit/config.yml
     ~/.config/clangd: ls/clangd
     ~/.config/powershell/Microsoft.PowerShell_profile.ps1: pwsh/user_profile.ps1
