@@ -20,8 +20,8 @@ if ("$sepP$env:PATH$sepP" -notlike "*$sepP$env:PNPM_HOME$sepP*" ) {
 # Source
 if (Test-Path ~/private_profile.ps1) { . ~/private_profile.ps1 }
 
-$dotfilesRoot = Split-Path -Parent (Get-Item $MyInvocation.MyCommand.Path).Target
-Import-Module (Join-Path $dotfilesRoot "modules/fzf_helper.psm1")
+$localModulePath = ($IsWindows) ? (Split-Path -Parent (Get-Item $MyInvocation.MyCommand.Path).Target) : "~/.config/powershell"
+Import-Module (Join-Path $localModulePath "modules/fzf_helper.psm1")
 
 # PSReadLine
 $PSReadLineOptions = @{

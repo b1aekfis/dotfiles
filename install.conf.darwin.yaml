@@ -13,7 +13,7 @@
     ~/.config/kitty:
     ~/Library/Application\ Support/lazygit/config.yml: lazygit/config.yml
     ~/Library/Preferences/clangd: ls/clangd
-    ~/.config/powershell/profile.ps1: pwsh/profile.ps1
+    ~/.config/powershell: pwsh
     ~/.config/tmux:
     ~/.config/nvim: vim/nvim
     ~/Library/Application\ Support/Code/User/settings.json: vscode/settings.json
