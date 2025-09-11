@@ -1,13 +1,13 @@
 $ErrorActionPreference = "Stop"
 
 if($IsWindows) {
-  $CONFIG = "install.conf.yaml"
+  $CONFIG = "install.conf/windows.yaml"
 }
 elseif($IsMacOS) {
-  $CONFIG = "install.conf.darwin.yaml"
+  $CONFIG = "install.conf/darwin.yaml"
 }
 elseif($IsLinux) {
-  $CONFIG = "install.conf.linux.yaml"
+  $CONFIG = "install.conf/linux.yaml"
 }
 $DOTBOT_DIR = "dotbot"
 
