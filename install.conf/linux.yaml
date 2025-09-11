@@ -20,10 +20,12 @@
     ~/.config/Code/User/keybindings.json: vscode/keybindings.json
     ~/.config/Code/User/tasks.json: vscode/tasks.json
     ~/.config/vscode/ext: vscode/ext
+    ~/.config/zsh:
     ~/.bashrc: .bashrc
     ~/.czrc: .czrc
     ~/.fdignore: .fdignore
     ~/.gitconfig: .gitconfig
+    ~/.zshenv: .zshenv
     ~/.config/starship.toml:
 
 - shell:
