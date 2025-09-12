@@ -7,6 +7,11 @@ if (-not $env:XDG_DATA_HOME)   { $env:XDG_DATA_HOME   = if ($IsWindows) { "$env:
 if (-not $env:XDG_STATE_HOME)  { $env:XDG_STATE_HOME  = if ($IsWindows) { "$env:LOCALAPPDATA" } else { "$HOME/.local/state" } }
 if (-not $env:XDG_CACHE_HOME)  { $env:XDG_CACHE_HOME  = if ($IsWindows) { "$env:TEMP" } else { "$HOME/.cache" } }
 
+ni -ItemType Directory -Force -Path "$env:XDG_CONFIG_HOME" | Out-Null
+ni -ItemType Directory -Force -Path "$env:XDG_DATA_HOME" | Out-Null
+ni -ItemType Directory -Force -Path "$env:XDG_STATE_HOME" | Out-Null
+ni -ItemType Directory -Force -Path "$env:XDG_CACHE_HOME" | Out-Null
+
 # PNPM_HOME
 if (-not $env:PNPM_HOME) { $env:PNPM_HOME = "$env:XDG_DATA_HOME/pnpm" }
 
