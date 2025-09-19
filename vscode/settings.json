@@ -271,5 +271,9 @@
     "workbench.settings.applyToAllProfiles": [
         "workbench.colorCustomizations"
     ],
-    "workbench.tree.enableStickyScroll": false
+    "workbench.tree.enableStickyScroll": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
