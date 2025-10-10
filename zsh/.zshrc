@@ -1,4 +1,8 @@
 bindkey -v
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^U' backward-kill-line
+bindkey -M viins '^W' backward-kill-word
+
 KEYTIMEOUT=1
 
 # Source
