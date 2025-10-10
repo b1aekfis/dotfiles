@@ -29,12 +29,6 @@ mkdir -p "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_STATE_HOME" "$XDG_CACHE_HOME"
 # PNPM_HOME
 [ -z "$PNPM_HOME" ] && export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 
-# PATH
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
 # Env
 export HISTFILE="$XDG_STATE_HOME/.zshhist"
 export SAVEHIST=100
@@ -48,3 +42,9 @@ setopt HIST_IGNORE_SPACE
 
 # Theme
 eval "$(starship init zsh)"
+
+# PATH
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
