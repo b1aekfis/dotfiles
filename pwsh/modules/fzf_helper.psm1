@@ -50,6 +50,8 @@ function Get-FF { # Get: cd or open files (nvim) with Fzf
     }
     else { fzf } # -j
 
+    Set-FZF_DEFAULT_COMMAND -Hidden -Follow # revert to default
+
     if ($dir) {
       if ($git_root) { cd $git_root }
       cd $dir
