@@ -12,16 +12,6 @@ ni -ItemType Directory -Force -Path "$env:XDG_DATA_HOME" | Out-Null
 ni -ItemType Directory -Force -Path "$env:XDG_STATE_HOME" | Out-Null
 ni -ItemType Directory -Force -Path "$env:XDG_CACHE_HOME" | Out-Null
 
-# PNPM_HOME
-if (-not $env:PNPM_HOME) { $env:PNPM_HOME = "$env:XDG_DATA_HOME/pnpm" }
-
-# PATH
-$sepP = $IsWindows ? ';' : ':'
-
-if ("$sepP$env:PATH$sepP" -notlike "*$sepP$env:PNPM_HOME$sepP*" ) {
-  $env:PATH = "$env:PNPM_HOME$sepP$env:PATH"
-}
-
 # Source
 if (Test-Path ~/private_profile.ps1) { . ~/private_profile.ps1 }
 
@@ -57,9 +47,6 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+p" -Function AcceptSuggestion # key accept
 
 # PSStyle
 $PSStyle.FileInfo.Directory = $PSStyle.Foreground.FromRgb(0x3a94c4)
-
-# Theme
-Invoke-Expression (&starship init powershell)
 
 # Function
 if ($IsWindows) {
@@ -104,7 +91,13 @@ function vim { # nvim
   }
 }
 
-# ZO
+# Pnpm
+if (-not $env:PNPM_HOME) { $env:PNPM_HOME = "$env:XDG_DATA_HOME/pnpm" }
+
+# Theme
+Invoke-Expression (&starship init powershell)
+
+# Zo
 $env:_ZO_FZF_OPTS=$env:FZF_DEFAULT_OPTS
 Invoke-Expression (& { (zoxide init powershell --cmd j | Out-String) })
 function jr { zoxide remove $(zoxide query -l | fzf) }
@@ -121,3 +114,10 @@ Set-Alias -Name gc -Value Get-GitCommit -Force
 
 function Get-GitPush{& git push $args}
 Set-Alias -Name gp -Value Get-GitPush -Force
+
+# PATH
+$sepP = $IsWindows ? ';' : ':'
+
+if ("$sepP$env:PATH$sepP" -notlike "*$sepP$env:PNPM_HOME$sepP*" ) {
+  $env:PATH = "$env:PNPM_HOME$sepP$env:PATH"
+}
