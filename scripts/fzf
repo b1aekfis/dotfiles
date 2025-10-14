@@ -1,0 +1,52 @@
+__FZF__FDC_STASH=$FZF_DEFAULT_COMMAND
+__FZF__FDO_STASH=$FZF_DEFAULT_OPTS
+
+__fzf__jump() {
+    export FZF_DEFAULT_COMMAND="fd --type d --hidden --follow"
+    export FZF_DEFAULT_OPTS=$(echo "$__FZF__FDO_STASH" | sed 's/--multi//')
+    __fzf__jump_dir=$(eval "$FZF_DEFAULT_COMMAND" | fzf)
+    __fzf__jump_ec=$?
+    export FZF_DEFAULT_COMMAND=$__FZF__FDC_STASH
+    export FZF_DEFAULT_OPTS=$__FZF__FDO_STASH
+
+    [ -z "$__fzf__jump_dir" ] || cd "$__fzf__jump_dir"
+    return $__fzf__jump_ec
+}
+
+__fzf__jump_around_worktree() {
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+
+    __fzf__jaw_git_root=$(git rev-parse --show-toplevel)
+
+    export FZF_DEFAULT_COMMAND="fd --type d --hidden --follow"
+    export FZF_DEFAULT_OPTS=$(echo "$__FZF__FDO_STASH" | sed 's/--multi//')
+    __fzf__jaw_dir=$(eval "$FZF_DEFAULT_COMMAND . \"$__fzf__jaw_git_root\"" \
+      | sed "s|^$__fzf__jaw_git_root/||" \
+      | fzf)
+    __fzf__jaw_ec=$?
+    export FZF_DEFAULT_COMMAND=$__FZF__FDC_STASH
+    export FZF_DEFAULT_OPTS=$__FZF__FDO_STASH
+
+    [ -z "$__fzf__jaw_dir" ] || cd "$__fzf__jaw_git_root/$__fzf__jaw_dir"
+    return $__fzf__jaw_ec
+  fi
+}
+
+__fzf__open_files_around_worktree() {
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    __fzf__ofaw_git_root=$(git rev-parse --show-toplevel)
+    __fzf__ofaw_lfiles=$(git ls-files --exclude-standard --cached --others --full-name "$__fzf__ofaw_git_root" | fzf --preview "bat --color=always --plain \"$__fzf__ofaw_git_root\"/{}")
+    __fzf__ofaw_ec=$?
+    [ -z "$__fzf__ofaw_lfiles" ] || {
+      __fzf__ofaw_cwd=$(pwd)
+      cd "$__fzf__ofaw_git_root"
+      if xargs -0 </dev/null >/dev/null 2>&1; then
+        printf "%s" "$__fzf__ofaw_lfiles" | tr '\n' '\0' | xargs -0 -o $@
+      else
+        printf "%s" "$__fzf__ofaw_lfiles" | xargs -o $@
+      fi
+      cd "$__fzf__ofaw_cwd"
+    }
+    return $__fzf__ofaw__ec
+  fi
+}
