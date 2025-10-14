@@ -4,6 +4,7 @@ bindkey -M viins '^U' backward-kill-line
 bindkey -M viins '^W' backward-kill-word
 
 KEYTIMEOUT=1
+SELF="${${(%):-%N}:A:h}"
 
 # Source
 test -f "$HOME/.zshrc.private" && source "$HOME/.zshrc.private"
@@ -42,6 +43,79 @@ setopt HIST_IGNORE_SPACE
 
 # Theme
 eval "$(starship init zsh)"
+
+# Fzf
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow"
+export FZF_DEFAULT_OPTS="
+  --style=minimal
+  --layout=reverse
+  --height=40%
+  --pointer='>'
+  --marker='> '
+  --color=spinner:#648f90,marker:#648f90,bg+:-1,hl:#859900,hl+:#859900,fg+:#9eaca0,prompt:#648f90,pointer:#648f90
+  --multi
+  --bind=F4:toggle-preview
+  --preview-window=:hidden
+  --preview='bat --color=always --plain {}'
+"
+
+source <(fzf --zsh)
+
+bindkey '\ej' fzf-cd-widget
+
+source "$SELF/../scripts/fzf"
+
+fzf_jaw() {
+  __fzf__jump_around_worktree
+  case $? in
+    0) zle reset-prompt 2>/dev/null || return 0 ;;
+    130) zle redisplay 2>/dev/null || return 0 ;;
+    *) return $? ;;
+  esac
+}
+zle -N fzf_jaw
+bindkey '\eJ' fzf_jaw
+
+fzf_ofaw() {
+  [ $# -gt 0 ] || set -- nvim
+  __fzf__open_files_around_worktree $@
+  case $? in
+    130) return 0 ;;
+    *) return $? ;;
+  esac
+}
+ofaw() { fzf_ofaw $@; }
+
+# Zo
+export _ZO_FZF_OPTS=${FZF_DEFAULT_OPTS/--multi/}
+eval "$(zoxide init zsh --no-cmd)"
+
+zoxide_zi() {
+  __zoxide_zi
+  case $? in
+    0) zle reset-prompt 2>/dev/null || return 0 ;;
+    130) zle redisplay 2>/dev/null || return 0 ;;
+    *) return $? ;;
+  esac
+}
+zle -N zoxide_zi
+bindkey '\ez' zoxide_zi
+zi() { zoxide_zi; }
+
+zoxide_ri() {
+  local sels ec
+  sels=$(zoxide query --list --score | fzf)
+  ec=$?
+  sels=$(awk '{ $1=""; sub(/^ +/, ""); print }' <<<"$sels")
+  [ -z "$sels" ] || echo "$sels" | tr '\n' '\0' | xargs -0 -I {} zoxide remove {}
+  case $ec in
+    0|130) zle redisplay 2>/dev/null || return 0 ;;
+    *) return $ec ;;
+  esac
+}
+zle -N zoxide_ri
+bindkey '\eZ' zoxide_ri
+zori() { zoxide_ri; }
 
 # PATH
 case ":$PATH:" in
