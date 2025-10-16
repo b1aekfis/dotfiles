@@ -1,16 +1,3 @@
-$env:FZF_DEFAULT_OPTS = "
-  --style minimal
-  --layout reverse
-  --height 40%
-  --pointer '>'
-  --marker '> '
-  --color 'spinner:#648f90,marker:#648f90,bg+:-1,hl:#859900,hl+:#859900,fg+:#9eaca0,prompt:#648f90,pointer:#648f90'
-  --multi
-  --bind 'F4:toggle-preview'
-  --preview-window ':hidden'
-  --preview 'bat --color=always --plain {}'
-  "
-
 function Set-FZF_DEFAULT_COMMAND {
   param(
     [string]$engine = "fd",
