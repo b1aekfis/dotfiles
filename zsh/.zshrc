@@ -1,13 +1,31 @@
+# XDG base
+[ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
+[ -z "$XDG_DATA_HOME"   ] && export XDG_DATA_HOME="$HOME/.local/share"
+[ -z "$XDG_STATE_HOME"  ] && export XDG_STATE_HOME="$HOME/.local/state"
+[ -z "$XDG_CACHE_HOME"  ] && export XDG_CACHE_HOME="$HOME/.cache"
+mkdir -p "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_STATE_HOME" "$XDG_CACHE_HOME"
+
+# Vars
+SELF="${${(%):-%N}:A:h}"
+export HISTFILE="$XDG_STATE_HOME/.zshhist"
+export SAVEHIST=100
+export HISTSIZE=$SAVEHIST
+
+# Opts
 bindkey -v
+KEYTIMEOUT=1
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+
+# Sources
+test -f "$HOME/.zshrc.private" && source "$HOME/.zshrc.private"
+
+# Keybindings
 bindkey -M viins '^?' backward-delete-char
 bindkey -M viins '^U' backward-kill-line
 bindkey -M viins '^W' backward-kill-word
-
-KEYTIMEOUT=1
-SELF="${${(%):-%N}:A:h}"
-
-# Source
-test -f "$HOME/.zshrc.private" && source "$HOME/.zshrc.private"
 
 # Aliases
 alias ls='ls --color=auto'
@@ -20,29 +38,11 @@ alias gp='git push'
 
 alias cls='clear'
 
-# XDG
-[ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
-[ -z "$XDG_DATA_HOME"   ] && export XDG_DATA_HOME="$HOME/.local/share"
-[ -z "$XDG_STATE_HOME"  ] && export XDG_STATE_HOME="$HOME/.local/state"
-[ -z "$XDG_CACHE_HOME"  ] && export XDG_CACHE_HOME="$HOME/.cache"
-mkdir -p "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_STATE_HOME" "$XDG_CACHE_HOME"
-
-# PNPM_HOME
-[ -z "$PNPM_HOME" ] && export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-
-# Env
-export HISTFILE="$XDG_STATE_HOME/.zshhist"
-export SAVEHIST=100
-export HISTSIZE=$SAVEHIST
-
-# Set
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-
 # Theme
 eval "$(starship init zsh)"
+
+# Pnpm
+[ -z "$PNPM_HOME" ] && export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 
 # Fzf
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow"
