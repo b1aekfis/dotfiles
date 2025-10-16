@@ -1,7 +1,4 @@
-# Env
-$env:VIRTUAL_ENV_DISABLE_PROMPT = 1
-
-# XDG
+# XDG base
 if (-not $env:XDG_CONFIG_HOME) { $env:XDG_CONFIG_HOME = if ($IsWindows) { "$env:LOCALAPPDATA" } else { "$HOME/.config" } }
 if (-not $env:XDG_DATA_HOME)   { $env:XDG_DATA_HOME   = if ($IsWindows) { "$env:LOCALAPPDATA" } else { "$HOME/.local/share" } }
 if (-not $env:XDG_STATE_HOME)  { $env:XDG_STATE_HOME  = if ($IsWindows) { "$env:LOCALAPPDATA" } else { "$HOME/.local/state" } }
@@ -12,11 +9,11 @@ ni -ItemType Directory -Force -Path "$env:XDG_DATA_HOME" | Out-Null
 ni -ItemType Directory -Force -Path "$env:XDG_STATE_HOME" | Out-Null
 ni -ItemType Directory -Force -Path "$env:XDG_CACHE_HOME" | Out-Null
 
-# Source
+# Sources
 if (Test-Path ~/private_profile.ps1) { . ~/private_profile.ps1 }
 
-$localModulePath = ($IsWindows) ? (Split-Path -Parent (Get-Item $MyInvocation.MyCommand.Path).Target) : "~/.config/powershell"
-Import-Module (Join-Path $localModulePath "modules/fzf_helper.psm1")
+# Vars
+$env:VIRTUAL_ENV_DISABLE_PROMPT = 1
 
 # PSReadLine
 $PSReadLineOptions = @{
@@ -48,7 +45,7 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+p" -Function AcceptSuggestion # key accept
 # PSStyle
 $PSStyle.FileInfo.Directory = $PSStyle.Foreground.FromRgb(0x3a94c4)
 
-# Function
+# Functions
 if ($IsWindows) {
   function trash { # remove items safely
     $shell = New-Object -ComObject Shell.Application
@@ -96,6 +93,23 @@ if (-not $env:PNPM_HOME) { $env:PNPM_HOME = "$env:XDG_DATA_HOME/pnpm" }
 
 # Theme
 Invoke-Expression (&starship init powershell)
+
+# Fzf
+$env:FZF_DEFAULT_OPTS = "
+  --style minimal
+  --layout reverse
+  --height 40%
+  --pointer '>'
+  --marker '> '
+  --color 'spinner:#648f90,marker:#648f90,bg+:-1,hl:#859900,hl+:#859900,fg+:#9eaca0,prompt:#648f90,pointer:#648f90'
+  --multi
+  --bind 'F4:toggle-preview'
+  --preview-window ':hidden'
+  --preview 'bat --color=always --plain {}'
+  "
+
+$localModulePath = ($IsWindows) ? (Split-Path -Parent (Get-Item $MyInvocation.MyCommand.Path).Target) : "~/.config/powershell"
+Import-Module (Join-Path $localModulePath "modules/fzf_helper.psm1")
 
 # Zo
 $env:_ZO_FZF_OPTS=$env:FZF_DEFAULT_OPTS
