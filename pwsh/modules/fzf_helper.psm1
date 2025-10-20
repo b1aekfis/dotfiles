@@ -27,6 +27,9 @@ function Get-FF { # Get: cd or open files (nvim) with Fzf
 
   # cd
   if ($jump) {
+    $FDO_stash = $env:FZF_DEFAULT_OPTS
+    $env:FZF_DEFAULT_OPTS = $FDO_stash -replace '--multi',''
+
     $dir = if ($worktree) { # -w -j
       if ($(git rev-parse --is-inside-work-tree)) {
         $git_root = git rev-parse --show-toplevel
@@ -38,6 +41,7 @@ function Get-FF { # Get: cd or open files (nvim) with Fzf
     else { fzf } # -j
 
     Set-FZF_DEFAULT_COMMAND -Hidden -Follow # revert to default
+    $env:FZF_DEFAULT_OPTS = $FDO_stash # revert to default
 
     if ($dir) {
       if ($git_root) { cd $git_root }
