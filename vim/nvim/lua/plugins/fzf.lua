@@ -17,10 +17,10 @@ return {
     local actions = require("fzf-lua").actions
 
     local colors = {
-      pointer = "#d7005f",
-      spinner = "#af5fff",
-      info = "#afaf87",
-      prompt = "#5f87af",
+      pointer = "#648f90",
+      spinner = "#648f90",
+      info = "#afaf87", -- based on Fzf defaults: Dark256 Info (144)
+      prompt = "#648f90",
       hl = "#859900"
     }
 
@@ -41,13 +41,9 @@ return {
         ["info"] = colors.info,
         ["marker"] = colors.pointer,
         ["prompt"] = colors.prompt,
-        ["gutter"] = "-1",
       },
       fzf_opts = {
-        ["--pointer"] = ">",
-        ["--marker"] = ">",
         ["--info"] = false,
-        ["--style"] = "minimal",
       },
       git = {
         files = {
