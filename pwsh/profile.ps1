@@ -106,6 +106,8 @@ $env:FZF_DEFAULT_OPTS = "
   --bind 'F4:toggle-preview'
   --preview-window ':hidden'
   --preview 'bat --color=always --plain {}'
+  --gutter ' '
+  --gutter-raw ' '
   "
 
 $localModulePath = ($IsWindows) ? (Split-Path -Parent (Get-Item $MyInvocation.MyCommand.Path).Target) : "~/.config/powershell"

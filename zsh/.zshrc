@@ -57,6 +57,8 @@ export FZF_DEFAULT_OPTS="
   --bind=F4:toggle-preview
   --preview-window=:hidden
   --preview='bat --color=always --plain {}'
+  --gutter=' '
+  --gutter-raw=' '
 "
 
 source <(fzf --zsh)
