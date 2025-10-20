@@ -53,6 +53,7 @@ function Get-FF { # Get: cd or open files (nvim) with Fzf
   # open files
   $file = if ($worktree) { # -w
     if ($(git rev-parse --is-inside-work-tree)) {
+      $cwd = $PWD
       $git_root = git rev-parse --show-toplevel
       git ls-files --exclude-standard --cached --others --full-name $git_root | fzf --preview "bat --color=always --plain '$git_root'/{}"
     }
@@ -62,5 +63,6 @@ function Get-FF { # Get: cd or open files (nvim) with Fzf
   if ($file) {
     if ($git_root) { cd $git_root }
     nvim $file
+    if ($cwd -and $cwd -ne $git_root) { cd $cwd }
   }
 }
