@@ -11,12 +11,9 @@ vim.keymap.set("n", "<c-k>", function() vim.diagnostic.goto_prev() end)
 vim.keymap.set("n", "QF", function() vim.diagnostic.setqflist(--[[all buffers]]) end)
 vim.keymap.set("n", "Qf", function() vim.diagnostic.setloclist(--[[cur buffer]]) end)
 
--- toggle tabline
-vim.o.showtabline = 0
-_G.hide_tabline = true
+-- toggle tabline, only meaningful when showtabline is not 1
 vim.keymap.set("n", "<Leader>T", function()
-  _G.hide_tabline = not _G.hide_tabline
-  vim.o.showtabline = _G.hide_tabline and 0 or 2
+  vim.o.showtabline = (vim.o.showtabline == 2 and 0) or (vim.o.showtabline == 0 and 2) or 1
 end)
 
 -- inspect color codes in the current line

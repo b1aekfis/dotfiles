@@ -34,7 +34,6 @@ return {
         -- section_separators = { left = '', right = '' },
         globalstatus = true,
         icons_enabled = false,
-        always_show_tabline = false,
         theme = theme,
       },
       sections = {
@@ -120,7 +119,7 @@ return {
           {
             'buffers',
             cond = function()
-              return not _G.hide_tabline and vim.fn.mode() ~= 'i'
+              return vim.fn.mode() ~= 'i'
             end,
             max_length = vim.o.columns,
             buffers_color = {
