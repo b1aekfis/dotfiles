@@ -114,21 +114,6 @@ return {
         },
       },
       inactive_sections = {},
-      tabline = {
-        lualine_a = {
-          {
-            'buffers',
-            cond = function()
-              return vim.fn.mode() ~= 'i'
-            end,
-            max_length = vim.o.columns,
-            buffers_color = {
-              active = 'lualine_a_insert',
-              inactive = 'lualine_b_normal',
-            },
-          },
-        },
-      },
     }
   end
 }

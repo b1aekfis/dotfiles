@@ -1,6 +1,7 @@
-require("config.options")
-require("config.keymaps")
-require("config.theme")
-require("config.lazy")
-require("config.autocmds")
-require("config.editor")
+require'config.options'
+require'config.theme'
+require'config.lazy'
+require'config.autocmds'
+require'config.editor'
+require'config.ui'
+require'config.keymaps'
