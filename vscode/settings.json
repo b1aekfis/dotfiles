@@ -1,279 +1,279 @@
 {
-    "[markdown]": {
-        "editor.fontFamily": "monospace"
-    },
-    "[plaintext]": {
-        "editor.fontFamily": "monospace",
-        "editor.unicodeHighlight.ambiguousCharacters": false,
-        "editor.unicodeHighlight.invisibleCharacters": false
-    },
-    "$schema": "vscode://schemas/settings/user",
-    "breadcrumbs.enabled": true,
-    "breadcrumbs.icons": false,
-    "chat.commandCenter.enabled": false,
-    "diffEditor.renderSideBySide": false,
-    "editor.bracketPairColorization.enabled": false,
-    "editor.cursorBlinking": "solid",
-    "editor.folding": false,
-    "editor.fontFamily": "PlemolJP Console NF",
-    "editor.fontLigatures": false,
-    "editor.fontSize": 14.7,
-    "editor.guides.bracketPairsHorizontal": false,
-    "editor.guides.highlightActiveBracketPair": false,
-    "editor.guides.indentation": false,
-    "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": false,
-    "editor.overviewRulerBorder": false,
-    "editor.renderLineHighlight": "none",
-    "editor.scrollbar.vertical": "hidden",
-    "editor.scrollbar.verticalScrollbarSize": 0,
-    "editor.stickyScroll.enabled": false,
-    "editor.wordWrap": "on",
-    "explorer.confirmDragAndDrop": false,
-    "extensions.ignoreRecommendations": true,
-    "git.openRepositoryInParentFolders": "always",
-    "launch": {
-        "configurations": [
-            {
-                "args": [],
-                "cwd": "${fileDirname}",
-                "environment": [],
-                "externalConsole": false,
-                "linux": {
-                    "miDebuggerPath": "/usr/bin/gdb"
-                },
-                "MIMode": "gdb",
-                "name": "C/C++: build and debug active file",
-                "osx": {
-                    "MIMode": "lldb"
-                },
-                "preLaunchTask": "C/C++: build active file",
-                "program": "${fileDirname}/${fileBasenameNoExtension}",
-                "request": "launch",
-                "setupCommands": [
-                    {
-                        "description": "Enable pretty-printing for gdb",
-                        "ignoreFailures": true,
-                        "text": "-enable-pretty-printing"
-                    },
-                    {
-                        "description": "Set Disassembly Flavor to Intel",
-                        "ignoreFailures": true,
-                        "text": "-gdb-set disassembly-flavor intel"
-                    }
-                ],
-                "stopAtEntry": false,
-                "type": "cppdbg",
-                "windows": {
-                    "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe"
-                }
-            }
-        ],
-        "version": "2.0.0"
-    },
-    "screencastMode.fontSize": 20,
-    "screencastMode.mouseIndicatorColor": "#ad5267",
-    "settingsSync.keybindingsPerPlatform": false,
-    "svg.preview.mode": "svg",
-    "task.problemMatchers.neverPrompt": false,
-    "terminal.external.linuxExec": "pwsh",
-    "terminal.external.osxExec": "pwsh",
-    "terminal.external.windowsExec": "pwsh",
-    "terminal.integrated.automationProfile.windows": null,
-    "terminal.integrated.cwd": "${fileDirname}",
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "terminal.integrated.fontFamily": "'PlemolJP Console NF'",
-    "terminal.integrated.fontWeight": "normal",
-    "terminal.integrated.gpuAcceleration": "off",
-    "terminal.integrated.profiles.windows": {
-        "Command Prompt": {
-            "args": [],
-            "icon": "terminal-cmd",
-            "path": [
-                "${env:windir}\\Sysnative\\cmd.exe",
-                "${env:windir}\\System32\\cmd.exe"
-            ]
+  "[markdown]": {
+    "editor.fontFamily": "monospace"
+  },
+  "[plaintext]": {
+    "editor.fontFamily": "monospace",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false
+  },
+  "$schema": "vscode://schemas/settings/user",
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.icons": false,
+  "chat.commandCenter.enabled": false,
+  "diffEditor.renderSideBySide": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.cursorBlinking": "solid",
+  "editor.folding": false,
+  "editor.fontFamily": "PlemolJP Console NF",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 14.7,
+  "editor.guides.bracketPairsHorizontal": false,
+  "editor.guides.highlightActiveBracketPair": false,
+  "editor.guides.indentation": false,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.overviewRulerBorder": false,
+  "editor.renderLineHighlight": "none",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.stickyScroll.enabled": false,
+  "editor.wordWrap": "on",
+  "explorer.confirmDragAndDrop": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "extensions.ignoreRecommendations": true,
+  "git.openRepositoryInParentFolders": "always",
+  "launch": {
+    "configurations": [
+      {
+        "args": [],
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "linux": {
+          "miDebuggerPath": "/usr/bin/gdb"
         },
-        "PowerShell": {
-            "icon": "terminal-powershell",
-            "source": "PowerShell"
+        "MIMode": "gdb",
+        "name": "C/C++: build and debug active file",
+        "osx": {
+          "MIMode": "lldb"
+        },
+        "preLaunchTask": "C/C++: build active file",
+        "program": "${fileDirname}/${fileBasenameNoExtension}",
+        "request": "launch",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "ignoreFailures": true,
+            "text": "-enable-pretty-printing"
+          },
+          {
+            "description": "Set Disassembly Flavor to Intel",
+            "ignoreFailures": true,
+            "text": "-gdb-set disassembly-flavor intel"
+          }
+        ],
+        "stopAtEntry": false,
+        "type": "cppdbg",
+        "windows": {
+          "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe"
         }
-    },
-    "terminal.integrated.shellArgs.windows": "-nologo",
-    /* todo-tree */
-    "todo-tree.general.tagGroups": {
-        "FIXME": [
-            "--FIXME--",
-            "FIXME:",
-            "FIX:"
-        ],
-        "STRESS": [
-            "--STRESS--",
-            "STRESS:"
-        ],
-        "TODO": [
-            "--TODO--",
-            "TODO:"
-        ]
-    },
-    "todo-tree.general.tags": [
-        // fixme group (tag)
-        "FIXME",
-        "--FIXME--",
-        "FIXME:",
-        "FIX:",
-        // todo group (tag)
-        "TODO",
-        "--TODO--",
-        "TODO:",
-        // stress group (tag)
-        "STRESS",
-        "--STRESS--",
-        "STRESS:",
-        // issues group (text)
-        "--issues--"
+      }
     ],
-    "todo-tree.highlights.customHighlight": {
-        "--issues--": {
-            "background": "#85e7e8",
-            "foreground": "#17202a",
-            "gutterIcon": true,
-            "icon": "issue-opened",
-            "iconColour": "#85e7e8",
-            "type": "text"
-        },
-        "FIXME": {
-            "background": "#ff8a58",
-            "foreground": "#000000",
-            "gutterIcon": true,
-            "icon": "bug",
-            "iconColour": "#ff8a58"
-        },
-        "STRESS": {
-            "background": "#ffa5d8",
-            "foreground": "#17202a",
-            "gutterIcon": true,
-            "icon": "pin",
-            "iconColour": "#ffa5d8"
-        },
-        "TODO": {
-            "background": "#85e7e8",
-            "foreground": "#17202a",
-            "gutterIcon": true,
-            "icon": "flame",
-            "iconColour": "#85e7e8"
-        }
+    "version": "2.0.0"
+  },
+  "screencastMode.fontSize": 20,
+  "screencastMode.mouseIndicatorColor": "#ad5267",
+  "settingsSync.keybindingsPerPlatform": false,
+  "svg.preview.mode": "svg",
+  "task.problemMatchers.neverPrompt": false,
+  "terminal.external.linuxExec": "pwsh",
+  "terminal.external.osxExec": "pwsh",
+  "terminal.external.windowsExec": "pwsh",
+  "terminal.integrated.automationProfile.windows": null,
+  "terminal.integrated.cwd": "${fileDirname}",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontFamily": "'PlemolJP Console NF'",
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.profiles.windows": {
+    "Command Prompt": {
+      "args": [],
+      "icon": "terminal-cmd",
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ]
     },
-    "vscode_custom_css.imports": [
-        "file://${userHome}/.config/vscode/ext/cuscssjs/statusbar.css",
-        "file://${userHome}/.config/vscode/ext/cuscssjs/titlebar.css"
+    "PowerShell": {
+      "icon": "terminal-powershell",
+      "source": "PowerShell"
+    }
+  },
+  "terminal.integrated.shellArgs.windows": "-nologo",
+  /* todo-tree */
+  "todo-tree.general.tagGroups": {
+    "FIXME": [
+      "--FIXME--",
+      "FIXME:",
+      "FIX:"
     ],
-    "vscode_custom_css.statusbar": false,
-    // "vscode_vibrancy.disableFramelessWindow": true,
-    // "vscode_vibrancy.opacity": 0,
-    // "vscode_vibrancy.refreshInterval": 10,
-    "vscode-neovim.ctrlKeysForNormalMode": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "o",
-        "r",
-        "t",
-        "u",
-        "v",
-        "x",
-        "y",
-        "z",
-        "/",
-        "]",
-        "right",
-        "left",
-        "up",
-        "down",
-        "backspace",
-        "delete",
-        "w"
+    "STRESS": [
+      "--STRESS--",
+      "STRESS:"
     ],
-    "vscode-neovim.neovimClean": true,
-    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
-    "vscode-neovim.statusLineSeparator": "",
-    "window.commandCenter": false,
-    "window.menuBarVisibility": "hidden",
-    "window.newWindowDimensions": "inherit",
-    "window.restoreWindows": "none",
-    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}",
-    "window.titleBarStyle": "custom",
-    "workbench.activityBar.location": "hidden",
-    "workbench.colorCustomizations": {
-        "activityBarTop.activeBorder": "#00000000",
-        "badge.background": "#2aa19899",
-        "breadcrumb.background": "#00000000",
-        "editor.background": "#161717",
-        "editorCursor.background": "#161717",
-        "editorCursor.foreground": "#64bc78",
-        "editorLineNumber.foreground": "#404040",
-        "editorSuggestWidget.background": "#081d20cc",
-        "editorSuggestWidget.border": "#00000000",
-        "focusBorder": "#00000000",
-        "input.background": "#00000000",
-        "input.border": "#00000000",
-        "list.activeSelectionBackground": "#081d20",
-        "list.focusBackground": "#203440",
-        "list.highlightForeground": "#859900",
-        "list.hoverBackground": "#00000000",
-        "list.inactiveSelectionBackground": "#081d20",
-        "panel.border": "#00000000",
-        "quickInput.background": "#081d20cc",
-        "quickInput.foreground": "#56635f",
-        "quickInputList.focusBackground": "#00000000",
-        "quickInputTitle.background": "#00000000",
-        "sideBar.background": "#161717",
-        "sideBar.border": "#00000000",
-        "sideBar.foreground": "#5a6a72",
-        "sideBarSectionHeader.border": "#00000000",
-        "statusBar.background": "#161717",
-        "statusBar.border": "#00000000",
-        "statusBar.debuggingBackground": "#00000000",
-        "statusBar.focusBorder": "#00000000",
-        "statusBar.foreground": "#5a6a72",
-        "statusBar.noFolderBackground": "#161717",
-        "statusBarItem.remoteBackground": "#00000000",
-        "statusBarItem.remoteForeground": "#5a6a72",
-        "terminalCursor.foreground": "#64bc78",
-        "textLink.activeForeground": "#2aa198",
-        "textLink.foreground": "#2aa198",
-        "titleBar.activeBackground": "#161717",
-        "titleBar.border": "#00000000",
-        "titleBar.inactiveBackground": "#161717"
+    "TODO": [
+      "--TODO--",
+      "TODO:"
+    ]
+  },
+  "todo-tree.general.tags": [
+    // fixme group (tag)
+    "FIXME",
+    "--FIXME--",
+    "FIXME:",
+    "FIX:",
+    // todo group (tag)
+    "TODO",
+    "--TODO--",
+    "TODO:",
+    // stress group (tag)
+    "STRESS",
+    "--STRESS--",
+    "STRESS:",
+    // issues group (text)
+    "--issues--"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "--issues--": {
+      "background": "#85e7e8",
+      "foreground": "#17202a",
+      "gutterIcon": true,
+      "icon": "issue-opened",
+      "iconColour": "#85e7e8",
+      "type": "text"
     },
-    "workbench.colorTheme": "Solarized Dark",
-    "workbench.editor.editorActionsLocation": "hidden",
-    "workbench.editor.showTabs": "none",
-    "workbench.editor.tabSizing": "fixed",
-    "workbench.editorAssociations": {
-        "*.pdf": "pdf.preview",
-        "*.txt": "default"
+    "FIXME": {
+      "background": "#ff8a58",
+      "foreground": "#000000",
+      "gutterIcon": true,
+      "icon": "bug",
+      "iconColour": "#ff8a58"
     },
-    "workbench.iconTheme": null,
-    "workbench.layoutControl.enabled": false,
-    "workbench.panel.showLabels": false,
-    "workbench.settings.applyToAllProfiles": [
-        "workbench.colorCustomizations"
-    ],
-    "workbench.tree.enableStickyScroll": false,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
+    "STRESS": {
+      "background": "#ffa5d8",
+      "foreground": "#17202a",
+      "gutterIcon": true,
+      "icon": "pin",
+      "iconColour": "#ffa5d8"
     },
-    "workbench.secondarySideBar.defaultVisibility": "hidden"
+    "TODO": {
+      "background": "#85e7e8",
+      "foreground": "#17202a",
+      "gutterIcon": true,
+      "icon": "flame",
+      "iconColour": "#85e7e8"
+    }
+  },
+  "vscode_custom_css.imports": [
+    "file://${userHome}/.config/vscode/ext/cuscssjs/statusbar.css",
+    "file://${userHome}/.config/vscode/ext/cuscssjs/titlebar.css"
+  ],
+  "vscode_custom_css.statusbar": false,
+  // "vscode_vibrancy.disableFramelessWindow": true,
+  // "vscode_vibrancy.opacity": 0,
+  // "vscode_vibrancy.refreshInterval": 10,
+  "vscode-neovim.ctrlKeysForNormalMode": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "o",
+    "r",
+    "t",
+    "u",
+    "v",
+    "x",
+    "y",
+    "z",
+    "/",
+    "]",
+    "right",
+    "left",
+    "up",
+    "down",
+    "backspace",
+    "delete",
+    "w"
+  ],
+  "vscode-neovim.neovimClean": true,
+  "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+  "vscode-neovim.statusLineSeparator": "",
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "hidden",
+  "window.newWindowDimensions": "inherit",
+  "window.restoreWindows": "none",
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}",
+  "window.titleBarStyle": "custom",
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorCustomizations": {
+    "activityBarTop.activeBorder": "#00000000",
+    "badge.background": "#2aa19899",
+    "breadcrumb.background": "#00000000",
+    "editor.background": "#161717",
+    "editorCursor.background": "#161717",
+    "editorCursor.foreground": "#64bc78",
+    "editorLineNumber.foreground": "#404040",
+    "editorSuggestWidget.background": "#081d20cc",
+    "editorSuggestWidget.border": "#00000000",
+    "focusBorder": "#00000000",
+    "input.background": "#00000000",
+    "input.border": "#00000000",
+    "list.activeSelectionBackground": "#081d20",
+    "list.focusBackground": "#203440",
+    "list.highlightForeground": "#859900",
+    "list.hoverBackground": "#00000000",
+    "list.inactiveSelectionBackground": "#081d20",
+    "panel.border": "#00000000",
+    "quickInput.background": "#081d20cc",
+    "quickInput.foreground": "#56635f",
+    "quickInputList.focusBackground": "#00000000",
+    "quickInputTitle.background": "#00000000",
+    "sideBar.background": "#161717",
+    "sideBar.border": "#00000000",
+    "sideBar.foreground": "#5a6a72",
+    "sideBarSectionHeader.border": "#00000000",
+    "statusBar.background": "#161717",
+    "statusBar.border": "#00000000",
+    "statusBar.debuggingBackground": "#00000000",
+    "statusBar.focusBorder": "#00000000",
+    "statusBar.foreground": "#5a6a72",
+    "statusBar.noFolderBackground": "#161717",
+    "statusBarItem.remoteBackground": "#00000000",
+    "statusBarItem.remoteForeground": "#5a6a72",
+    "terminalCursor.foreground": "#64bc78",
+    "textLink.activeForeground": "#2aa198",
+    "textLink.foreground": "#2aa198",
+    "titleBar.activeBackground": "#161717",
+    "titleBar.border": "#00000000",
+    "titleBar.inactiveBackground": "#161717"
+  },
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.editor.showTabs": "none",
+  "workbench.editor.tabSizing": "fixed",
+  "workbench.editorAssociations": {
+    "*.pdf": "pdf.preview",
+    "*.txt": "default"
+  },
+  "workbench.iconTheme": null,
+  "workbench.layoutControl.enabled": false,
+  "workbench.panel.showLabels": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.settings.applyToAllProfiles": [
+    "workbench.colorCustomizations"
+  ],
+  "workbench.tree.enableStickyScroll": false
 }
