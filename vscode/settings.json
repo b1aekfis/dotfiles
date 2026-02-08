@@ -174,9 +174,11 @@
     "file://${userHome}/.config/vscode/ext/cuscssjs/titlebar.css"
   ],
   "vscode_custom_css.statusbar": false,
-  // "vscode_vibrancy.disableFramelessWindow": true,
-  // "vscode_vibrancy.opacity": 0,
-  // "vscode_vibrancy.refreshInterval": 10,
+  "vscode-neovim.afterInitConfig": [
+    "lua << EOF",
+    "vim.opt.clipboard = 'unnamedplus'",
+    "EOF"
+  ],
   "vscode-neovim.ctrlKeysForNormalMode": [
     "a",
     "b",
