@@ -89,7 +89,6 @@
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.fontFamily": "'PlemolJP Console NF'",
   "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.gpuAcceleration": "off",
   "terminal.integrated.profiles.windows": {
     "Command Prompt": {
       "args": [],
