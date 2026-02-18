@@ -1,4 +1,4 @@
--- Copyright (c) 2025 b1aekfis
+-- Copyright (c) 2025 8lackfish
 -- Custom lualine theme based on solarized-osaka color palette
 -- Original solarized-osaka: https://github.com/craftzdog/solarized-osaka.nvim
 -- License: MIT
