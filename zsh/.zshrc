@@ -12,7 +12,6 @@ export SAVEHIST=100
 export HISTSIZE=$SAVEHIST
 
 # Opts
-bindkey -v
 KEYTIMEOUT=1
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
